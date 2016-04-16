@@ -14,7 +14,6 @@
 This will take in an int array and output time.
 \***********************************************************************/
 
-
 int enumeration1(int n)
 {
 	return 0;
