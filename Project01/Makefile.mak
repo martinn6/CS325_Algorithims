@@ -1,6 +1,6 @@
 CFLAGS = -Wall -fpic -coverage -lm -std=c99
 
-Project01.o: Project01.c
+Project01: Project01.c
 	gcc -c Project01.c -g  $(CFLAGS)
 
 all: Project01
