@@ -45,7 +45,7 @@ int main()
 			pt = strtok(str,",");
 			while (pt != NULL) {
 				if (pt[0] == '[')
-					pt[0] == ' ';
+					pt[0] = ' ';
 				int a = atoi(pt);
 				printf("%d\n", a);
 				pt = strtok (NULL, ",");
