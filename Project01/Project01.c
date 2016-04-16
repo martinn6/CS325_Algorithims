@@ -23,36 +23,32 @@ int enumeration1(int n)
 main()
 {
 	//Declare Variables
-	file thisfile;
-	bool fileLoaded = 0;
-	string inputFileName;
-	string outputFileName;
+	const char* filename;
+	clock_t timer;
+	FILE *fileptr;
+	int numArray[50];
 	
 	//Load file
-	while(fileLoaded == 0)
+	filename = "MSS_Problems.txt";
+	printf("opening file: %s\n", filename);
+	fileptr = fopen(filename, "r");
+	
+	if(fileptr)
 	{
-		//Get User Input
-		cout << "\nEnter the name for the input file: ";
-		getline(cin, inputFileName);
-						
-		//OPEN FILE 
-		ifstream inputFile(inputFileName.c_str());
-		//ERROR HANDELING
-		if (inputFile)
+		for (int i = 0; i < 50; i++)
 		{
-			cout << "\nOpening " << inputFileName << "...";
-			fileLoaded=1;
-			inputFile.close();
+			fscanf(fileptr, "%d", &numArray[i]);
 		}
-		else
-		{
-			cout << "\nError 404: File " << inputFileName << " not found!";
-		}	
+	}
+	else
+	{
+		printf("Error opening %s\n", filename);
 	}
 	
-	//open inputfile	
-	ifstream inputFile(inputFileName.c_str());
-	
+	for (int i = 0; i < 50; i++)
+	{
+		printf("numArray[%d] = %d", i, numArray[i]);
+	}
 	
 	
 	
