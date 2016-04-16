@@ -36,6 +36,7 @@ int main()
 	
 	if(fileptr)
 	{
+		printf("\nOpened file.");
 		for (int i = 0; i < 50; i++)
 		{
 			fscanf(fileptr, "%d", &numArray[i]);
@@ -48,7 +49,7 @@ int main()
 	
 	for (int i = 0; i < 50; i++)
 	{
-		printf("numArray[%d] = %d", i, numArray[i]);
+		printf("numArray[%d] = %d ", i, numArray[i]);
 	}
 	
 	
