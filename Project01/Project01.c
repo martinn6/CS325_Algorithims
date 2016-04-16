@@ -6,9 +6,10 @@
  * Description: Fibonacci recusive program
  * *******************************************************************************************/
 
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /**********************************************************************\
 This will take in an int array and output time.
@@ -20,7 +21,7 @@ int enumeration1(int n)
 } 
 
 
-main()
+int main()
 {
 	//Declare Variables
 	const char* filename;
