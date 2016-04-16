@@ -37,7 +37,7 @@ int main()
 	
 	if(fileptr)
 	{
-		printf("\nOpened file.");
+		printf("\nOpened file.\n");
 		char *pt;
 		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11] ";
 		//for (int i = 0; i < 50; i++)
@@ -71,7 +71,7 @@ int main()
 	//Run Test 4
 	//Close File
 	//Exit
-	
+	printf("\nHave a nice day.\n");
 	return 0;
 }
 
