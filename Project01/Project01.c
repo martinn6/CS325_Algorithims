@@ -39,7 +39,7 @@ int main()
 	{
 		printf("\nOpened file.");
 		char *pt;
-		char str[] ="1,2,3,4,5";
+		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11] ";
 		//for (int i = 0; i < 50; i++)
 		//{
 			pt = strtok(str,",");
