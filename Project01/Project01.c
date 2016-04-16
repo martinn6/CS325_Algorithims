@@ -10,7 +10,12 @@
 #include <math.h>
 #include <stdlib.h>
 
-int FibRecursive(int n)
+/**********************************************************************\
+This will take in an int array and output time.
+\***********************************************************************/
+
+
+int enumeration1(int n)
 {
 	return 0;
 } 
@@ -20,11 +25,13 @@ main()
 {
 	//Load file
 	//Run Test 1
+	enumeration1(0);
 	//Run Test 2
 	//Run Test 3
 	//Run Test 4
 	//Close File
 	//Exit
+	
 	return 0;
 }
 
