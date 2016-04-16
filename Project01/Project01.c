@@ -44,7 +44,7 @@ int main()
 		//{
 			pt = strtok(str,",");
 			while (pt != NULL) {
-				if (pt[0] == "[")
+				if (pt[0] == '[')
 					printf("Test worked!");
 				int a = atoi(pt);
 				printf("%d\n", a);
