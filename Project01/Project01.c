@@ -37,10 +37,16 @@ int main()
 	if(fileptr)
 	{
 		printf("\nOpened file.");
-		for (int i = 0; i < 50; i++)
-		{
-			fscanf(fileptr, "%d", &numArray[i]);
-		}
+		char *pt;
+		//for (int i = 0; i < 50; i++)
+		//{
+			pt = strtok(str,",");
+			while (pt != NULL) {
+				int a = atoi(pt);
+				printf("%d\n", a);
+				pt = strtok (NULL, ",");
+			}
+		//}
 	}
 	else
 	{
