@@ -1,8 +1,9 @@
 CFLAGS = -Wall -fpic -coverage -lm -std=c99
 
-Project01: Project01.c
-	gcc -c Project01.c -g  $(CFLAGS)
+project01: Project01.c
+	gcc -o Project01 Project01.c $(CFLAGS)
 
-all: Project01
+all: project01
+
 clean:
 	rm -f *.o Project01.exe
