@@ -84,18 +84,18 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 						//line[lineNum].subArray[0] = a[b]; //subArray[position] = a[b]
 						//line[lineNum].subArrayLength = 1; //increaes subArray length
 				}
-				printf("\n");
-				printf("subArrayLength=%d", line[lineNum].subArrayLength);
-				printf("subArrayFirst = ");
-				for (int i = 0; i < line[lineNum].subArrayLength; i++)
-					//printf("%d ", line[lineNum].subArray[i]);
-				printf("\n");
+				// printf("\n");
+				// printf("subArrayLength=%d", line[lineNum].subArrayLength);
+				// printf("subArrayFirst = ");
+				// for (int i = 0; i < line[lineNum].subArrayLength; i++)
+				// printf("%d ", line[lineNum].subArray[i]);
+				// printf("\n");
 			}
 			
 			
 			
 		}
-		printf("maxFirst=%d\n", maxFirst); 
+		// printf("maxFirst=%d\n", maxFirst); 
 		//find max in the second half
 		int maxSecond = 0;
 		sum = 0;
@@ -106,16 +106,16 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 				maxSecond = sum;
 			//printf("maxSecond=%d\n", maxSecond);
 		}
-		printf("maxSecond=%d\n", maxSecond);  
+		// printf("maxSecond=%d\n", maxSecond);  
 		//combine the max sum
 		combinedMax = maxSecond + maxFirst;
 		
 	}
-	printf("combinedMax=%d\n", combinedMax);
-	printf("subArrayFirst = ");
-	for (int i = 0; i < line[lineNum].subArrayLength; i++)
+	// printf("combinedMax=%d\n", combinedMax);
+	// printf("subArrayFirst = ");
+	// for (int i = 0; i < line[lineNum].subArrayLength; i++)
 		//printf("%d ", line[lineNum].subArray[i]);
-	printf("\n");
+	// printf("\n");
 	return 0;
 	//return fmax(combinedMax, fmax(firstHalfMax, secondHalfMax));
 }
