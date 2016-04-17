@@ -111,7 +111,7 @@ int algoTwoMaxSubarray(struct lines *line)
 	return 0;
 }
 
-int algoThreeMaxSubArray(int a[], int lo, int hi) 
+int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int hi) 
 { 	//int a[], int lo, int hi
 	// base case: there's only one element present in the array
 	// return only element in the array
@@ -130,9 +130,9 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 		int midpoint = (lo + hi)/2;
 		 
 		// recursive call that will calculate the sum of the left half
-		int firstHalfMax = algoThreeMaxSubArray(a, lo, midpoint);
+		int firstHalfMax = algoThreeMaxSubArray(&line, lineNum, a, lo, midpoint);
 		// recursive call that will calculate the sum of the right half
-		int secondHalfMax = algoThreeMaxSubArray(a, midpoint+1, hi);
+		int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
 
 		// get the max in the first half
 		int maxFirst = 0;
@@ -146,7 +146,7 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 				for (int b = midpoint - 1; b <= i; b--)
 				{
 						//int c = 0;
-						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
+						subArrayFirst = line[a].num[b];
 						line[a].subArrayLength++;
 				}
 			}
@@ -274,7 +274,7 @@ int main()
 		//Run Test 3
 		for (int a = 0; a <= line[0].noOfLines; a++)
 		{
-			algoThreeMaxSubArray(line[a].num, 0, line[a].noOfnums);
+			algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums); //struct, lineNum, numArray, lo, hi
 		}
 	}
 	else if (strcmp(userInput,"4") == 0)
