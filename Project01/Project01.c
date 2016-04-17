@@ -60,7 +60,7 @@ int main()
 			else
 			{
 				printf("%s", buffer);
-				strncpy(words[noOfLines], buffer);
+				strncpy(words[noOfLines], buffer, 99);
 				noOfLines++;
 				if(noOfLines >= maxLinesAllowed);
 				{
