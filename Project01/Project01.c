@@ -123,7 +123,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 	
 	//array test
 	printf("a[] = ");
-	for (int i = 0; i < subArrayFirstLen; i++)
+	for (int i = 0; i < hi; i++)
 		printf("%d ", a[i]);
 	printf("\n");	
 	
@@ -158,8 +158,8 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 						c++;
 				}
 			}
-			printf("maxFirst=%d\n", maxFirst);
-			printf("subArrayFirst = ");
+			//printf("maxFirst=%d\n", maxFirst);
+			//printf("subArrayFirst = ");
 			for (int i = 0; i < subArrayFirstLen; i++)
 				printf("%d ", subArrayFirst[i]);
 			
@@ -173,12 +173,12 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 			sum += a[i];
 			if (sum > maxSecond)
 				maxSecond = sum;
-			printf("maxSecond=%d\n", maxSecond);
+			//printf("maxSecond=%d\n", maxSecond);
 		}
 		 
 		//combine the max sum
 		int combinedMax = maxSecond + maxFirst;
-		printf("combinedMax=%d\n", combinedMax);
+		//printf("combinedMax=%d\n", combinedMax);
 	}
 	
 	return 0;
