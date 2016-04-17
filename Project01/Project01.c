@@ -143,7 +143,7 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 			if (sum > maxFirst)
 			{
 				maxFirst = sum;
-				for (int b = 0; b <= j; b++)
+				for (int b = midpoint - 1; b <= i; b--)
 				{
 						//int c = 0;
 						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
