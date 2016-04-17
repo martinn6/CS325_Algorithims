@@ -124,60 +124,58 @@ int main()
 	printf("3) Algorithm 3: Divide and Conquer\n");
 	printf("4) Algorithm 4: Linear-time\n");
 	
-	
 	fgets (userInput, 100, stdin);
 	
-	 printf("userInput = %s", userInput);
 	 
-	// if (strcmp(userInput,"1") == 0)
-	// {
-		// Run First Algorithim
-		// algoOneMaxSubarray(&line);
-	// }
-	// else if (strcmp(userInput,"2") == 0)
-	// {
-		// Run Test 2
-		// printf("Algorithm 2: Better Enumeration");
+	if (strcmp(userInput,"1") == 0)
+	{
+		//Run First Algorithim
+		algoOneMaxSubarray(&line);
+	}
+	else if (strcmp(userInput,"2") == 0)
+	{
+		//Run Test 2
+		printf("Algorithm 2: Better Enumeration");
 		
-	// }
-	// else if (strcmp(userInput,"3") == 0)
-	// {
-		// Run Test 3
-		// printf("Algorithm 3: Divide and Conquer");
-	// }
-	// else if (strcmp(userInput,"4") == 0)
-	// {
-		// Run Test 4
-		// printf("Algorithm 4: Linear-time");
-	// }
-	// else
-	// {
-		// printf("Invalid Input.");
-	// }
+	}
+	else if (strcmp(userInput,"3") == 0)
+	{
+		//Run Test 3
+		printf("Algorithm 3: Divide and Conquer");
+	}
+	else if (strcmp(userInput,"4") == 0)
+	{
+		//Run Test 4
+		printf("Algorithm 4: Linear-time");
+	}
+	else
+	{
+		printf("Invalid Input.");
+	}
 	
 
 	//Test Output
-	// printf("Results:\n\n");
-	// for (int i = 0; i < line[0].noOfLines; i++)
-	// {
-		// printf("[");
-		// for (int j = 0; j < line[i].noOfnums; j++)
-		// {
-			// printf("%i", line[i].num[j]);
-			// if(j != line[i].noOfnums - 1)
-				// printf(", ");
-		// }
-		// printf("]\n");
-		// printf("[");
-		// for (int j = 0; j < line[i].subArrayLength; j++)
-		// {
-			// printf("%i", line[i].subArray[j]);
-			// if(j != line[i].subArrayLength - 1)
-				// printf(", ");
-		// }
-		// printf("]\n");
-		// printf("max sum = %d\n\n", line[i].maxArraySum);
-	// }
+	printf("Results:\n\n");
+	for (int i = 0; i < line[0].noOfLines; i++)
+	{
+		printf("[");
+		for (int j = 0; j < line[i].noOfnums; j++)
+		{
+			printf("%i", line[i].num[j]);
+			if(j != line[i].noOfnums - 1)
+				printf(", ");
+		}
+		printf("]\n");
+		printf("[");
+		for (int j = 0; j < line[i].subArrayLength; j++)
+		{
+			printf("%i", line[i].subArray[j]);
+			if(j != line[i].subArrayLength - 1)
+				printf(", ");
+		}
+		printf("]\n");
+		printf("max sum = %d\n\n", line[i].maxArraySum);
+	}
 	
 	//Exit
 	printf("\nHave a nice day.\n");
