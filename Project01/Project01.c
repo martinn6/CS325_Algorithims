@@ -31,6 +31,7 @@ int main()
 	int numArray[50];
 	int maxLinesAllowed = 20;
     int maxLineLength = 100;
+	int noOfLines = 0;
 	
 	//aloc memory//
 	char **words = (char **)malloc(sizeof(char*)*maxLinesAllowed);
@@ -47,8 +48,8 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		if (fgets(words[0], 100, fileptr) != NULL)
-			printf ("%s", words[0]);
+		if (fgets(words[noOfLines], 100, fileptr) != NULL)
+			printf ("%s", words[noOfLines]);
 		
 	}
 	
@@ -74,8 +75,8 @@ int main()
 		printf("Error opening %s\n", filename);
 	}
 	
-	for(int j = 0; j < i; j++)
-        printf("%s\n", words[j]);
+	for(int j = 0; j < noOfLines; j++)
+        printf("%s\n", words[0]);
 	
 	for (int i = 0; i < 50; i++)
 	{
