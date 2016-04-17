@@ -51,7 +51,7 @@ int algoOneMaxSubarray(struct lines *line)
 					sum += line[a].num[cur]; // add the current element to the sum
 					curArrayLen++; // increment the current subarray length
 				}
-				if(sum > maxSum) { // if the current sum is greater than the current max sum, replace it
+				if(sum > line[a].maxArraySum) { // if the current sum is greater than the current max sum, replace it
 					line[a].maxArraySum = sum; // reset the max subarray sum
 					line[a].maxArrayLength = curArrayLen; // reset the max subarray length
 					printf("\nmax sum found=%d\n",sum);
