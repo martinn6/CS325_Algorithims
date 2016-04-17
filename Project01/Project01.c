@@ -90,7 +90,7 @@ int main()
 	else {
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
-			printf("%s", buffer);
+			//printf("%s", buffer); //test buffer
 			strncpy(line[line[0].noOfLines].words, buffer, 99);
 			line[0].noOfLines++;
 		}
@@ -100,7 +100,7 @@ int main()
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
 		line[i].noOfnums = 0;
-		printf("Words[%d]=%s\n", i, line[i].words);
+		//printf("Words[%d]=%s\n", i, line[i].words); //Test Only
 		char *pt;
 		pt = strtok(line[i].words,",");
 		while (pt != NULL) {
