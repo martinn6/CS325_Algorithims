@@ -22,7 +22,7 @@ struct lines {
 	int maxLinesAllowed = 20;
     int maxLineLength = 100;
 	int noOfLines = 0;
-}
+};
 
 
 int enumeration1(int n)
