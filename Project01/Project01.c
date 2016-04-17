@@ -64,12 +64,18 @@ int main()
 					printf("%s", buffer);
 					words[noOfLines] = &buffer;
 					noOfLines++;
+					if(noOfLines >= maxLinesAllowed);
+					{
+						int new_size;
+						new_size = lines_allocated*2;
+						words = (char **)realloc(words,sizeof(char*)*new_size);
+					}
 				}
 			}
 		}
 	}
 	
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < noOfLines; i++)
 	{
 		printf("Words=%s\n", words[0]);
 	}
