@@ -59,6 +59,7 @@ int main()
         fgets(words[i],maxLineLength-1,fileptr);
 		
 	}
+	 printf("Words=%s\n", words[0]);
 	
 	
 	if(fileptr)
@@ -82,8 +83,7 @@ int main()
 		printf("Error opening %s\n", filename);
 	}
 	
-	for(int j = 0; j < noOfLines; j++)
-        printf("%s\n", words[0]);
+       
 	
 	// for (int i = 0; i < 50; i++)
 	// {
