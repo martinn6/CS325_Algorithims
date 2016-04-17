@@ -45,8 +45,12 @@ int main()
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
 	
-	if (fgets(words[i],maxLineLength-1,fileptr)==NULL)
-        break;
+	while(1=1)
+	{
+		if (fgets(words[i],maxLineLength-1,fileptr)==NULL)
+			break;
+		i++;
+	}
 	
 	if(fileptr)
 	{
