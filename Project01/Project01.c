@@ -70,7 +70,7 @@ int algoOneMaxSubarray(struct lines *line)
 			}
 		}
 		end = clock();
-		time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+		time_spent = ((double)end - (double)begin) / CLOCKS_PER_SEC;
 		line[a].time = time_spent;
 	}
 	
