@@ -37,14 +37,14 @@ int algoOneMaxSubarray(struct lines *line)
 	int maxArrayLen;
 	int sum = 0; // holds the sum
 	int maxSum = 0; // holds the max sum of the subarray
-	clock_t t;
+	clock_t start_t, end_t;
 	//int len = 0;
 	
 	
 	for(int a = 0; a < line[0].noOfLines; a++)
 	{
-		t = clock();
-		printf("t=%ld\n",t);
+		start_t = clock();
+		printf("t=%ld\n", start_t);
 		for(int i = 0; i < line[a].noOfnums; i++)
 		{
 			for(int j = i; j < line[a].noOfnums; j++) 
@@ -75,9 +75,9 @@ int algoOneMaxSubarray(struct lines *line)
 		{
 			x++;
 		}
-		t = clock() - t;
-		printf("t2=%ld\n",t);
-		line[a].time = ((long double)t)/CLOCKS_PER_SEC;
+		end_t = clock() - t;
+		printf("t2=%ld\n",end_t);
+		line[a].time = (long double)(end_t-start_t)/CLOCKS_PER_SEC;
 	}
 	
 	
