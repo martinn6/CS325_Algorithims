@@ -62,7 +62,7 @@ int main()
 				while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
 				{
 					printf("%s", buffer);
-					words[noOfLines] = buffer;
+					strcpy(words[noOfLines], buffer);
 					noOfLines++;
 					if(noOfLines >= maxLinesAllowed);
 					{
