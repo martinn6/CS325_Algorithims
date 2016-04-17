@@ -71,6 +71,12 @@ int algoOneMaxSubarray(struct lines *line)
 } 
 
 
+int algoOneMaxSubarray(struct lines *line)
+{
+	return 0;
+}
+
+
 int main()
 {
 	//Declare Variables
@@ -78,6 +84,7 @@ int main()
 	const char* filename;
 	clock_t timer;
 	FILE *fileptr;
+	char* userInput
 	
 	//Load lines into line[n].words
 	line[0].noOfLines = 0;
@@ -116,16 +123,39 @@ int main()
 	//close file
 	fclose(fileptr);
 	 
-	//Run First Algorithim
-	algoOneMaxSubarray(&line);
+	//ask user for which algorithm to run
+	printf("Choose which algorithim to run:\n");
+	printf("1) Algorithm 1: Enumeration");
+	printf("2) Algorithm 2: Better Enumeration");
+	printf("3) Algorithm 3: Divide and Conquer");
+	printf("4) Algorithm 4: Linear-time");
+	 
+	scanf("%s", &userInput); 
+	 
+	 
+	switch(userInput) {
+		case '1':
+			//Run First Algorithim
+			algoOneMaxSubarray(&line);
+			break;
+		case '2':
+			//Run Test 2
+			printf("Algorithm 2: Better Enumeration");
+			break;
+		case '3':
+			//Run Test 3
+			printf("Algorithm 3: Divide and Conquer");
+			break;
+		case '4':
+			//Run Test 4
+			printf("Algorithm 4: Linear-time");
+			break;
+		default:
+			printf("Invalid Input.");
+	}
 	
-	//Run Test 2
-	//Run Test 3
-	//Run Test 4
-	//Close File
-	//Exit
-	
-	/* TEST OUTPUT */
+
+	//Test Output
 	printf("Results:\n\n");
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
@@ -148,6 +178,7 @@ int main()
 		printf("max sum = %d\n\n", line[i].maxArraySum);
 	}
 	
+	//Exit
 	printf("\nHave a nice day.\n");
 	return 0;
 }
