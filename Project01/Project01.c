@@ -100,6 +100,7 @@ int algoTwoMaxSubarray(struct lines *line)
 					line[a].maxArraySum = sum;
 					
 					//get the subarray
+					line[a].subArrayLength = 0;
 					for (int b = i; b <= j; b++)
 					{
 						//int c = 0;
