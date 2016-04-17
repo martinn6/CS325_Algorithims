@@ -42,14 +42,15 @@ int main()
     }
 	
 	//Load file
+	char mystring [100];
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		// if (fgets(words[noOfLines], 100, fileptr) != NULL)
-			// printf ("%s", words[noOfLines]);
+		if (fgets(mystring, 100, fileptr) != NULL)
+			printf ("%s", mystring);
 		
 	}
 	
