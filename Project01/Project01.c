@@ -77,7 +77,7 @@ int main()
 	
 	for (int i = 0; i < noOfLines; i++)
 	{
-		printf("Words=%s\n", words[0]);
+		printf("Words[%d]=%s\n", i, words[i]);
 	}
 	
 	
