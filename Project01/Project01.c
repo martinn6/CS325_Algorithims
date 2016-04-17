@@ -11,6 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 /**********************************************************************\
 This will take in an int array and output time.
@@ -69,6 +70,7 @@ int algoOneMaxSubarray(struct lines *line)
 				}
 			}
 		}
+		sleep(3);
 		end = clock();
 		time_spent = ((double)end - (double)begin) / CLOCKS_PER_SEC;
 		line[a].time = time_spent;
