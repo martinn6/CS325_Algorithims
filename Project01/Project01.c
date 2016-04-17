@@ -42,7 +42,7 @@ int main()
     }
 	
 	//Load file
-	char mystring [100];
+	char buffer [100];
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
@@ -59,8 +59,8 @@ int main()
             }
 			else
 			{
-				if(fgets(words[i],maxLineLength-1,fileptr) == NULL)
-					break;
+				while(fgets(lineString,maxLineLength-1,fileptr) != NULL)
+					printf("%s", buffer);
 			}
 		}
 	}
