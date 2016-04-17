@@ -50,7 +50,7 @@ int algoOneMaxSubarray(int a[], int len)
 			}
 		}
 	}
-	printf("maxArrayLen = %d", maxArrayLen);
+	printf("maxArrayLen = %d\n", maxArrayLen);
 	return 0;
 } 
 
