@@ -123,8 +123,10 @@ int main()
 	printf("2) Algorithm 2: Better Enumeration\n");
 	printf("3) Algorithm 3: Divide and Conquer\n");
 	printf("4) Algorithm 4: Linear-time\n");
-	 
+	
+	userInput = (char*) malloc(100);
 	scanf("%s", &userInput); 
+	
 	 
 	 
 	if (strcmp(userInput,"1") == 0)
