@@ -59,7 +59,7 @@ int main()
             }
 			else
 			{
-				while(fgets(lineString,maxLineLength-1,fileptr) != NULL)
+				while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
 					printf("%s", buffer);
 			}
 		}
