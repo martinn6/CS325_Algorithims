@@ -122,6 +122,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		subArraySecondLen = 0;
 	
 	//array test
+	printf("lo = %d, hi = %d\n", lo, hi);
 	printf("a[] = ");
 	for (int i = 0; i < hi; i++)
 		printf("%d ", a[i]);
@@ -135,6 +136,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 	{			
 		// if the array contains more than one element, find the midpoint
 		int midpoint = (lo + hi)/2;
+		printf("lo = %d, hi = %d, midpoint = %d\n", lo, hi, midpoint);
 		 
 		// recursive call that will calculate the sum of the left half
 		int firstHalfMax = algoThreeMaxSubArray(&line, lineNum, a, lo, midpoint);
