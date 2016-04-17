@@ -125,7 +125,7 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 	else
 	{			
 		// if the array contains more than one element, find the midpoint
-		midpoint = (lo + hi)/2;
+		int midpoint = (lo + hi)/2;
 		 
 		// recursive call that will calculate the sum of the left half
 		int firstHalfMax = algoThreeMaxSubArray(a, lo, midpoint);
@@ -261,7 +261,7 @@ int main()
 	else if (strcmp(userInput,"3") == 0)
 	{
 		//Run Test 3
-		for (int a = 0; a <= line[0].noOfLines; a++))
+		for (int a = 0; a <= line[0].noOfLines; a++)
 		{
 			algoThreeMaxSubArray(line[a].num, 0, line[a].noOfNums);
 		}
