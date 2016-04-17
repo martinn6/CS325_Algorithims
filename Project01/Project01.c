@@ -39,7 +39,7 @@ int main()
 	FILE *fileptr;
 	
 	//Load file
-	lines[0].noOfLines = 0;
+	line[0].noOfLines = 0;
 	char buffer[100];
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
