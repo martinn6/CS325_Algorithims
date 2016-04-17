@@ -78,7 +78,7 @@ int main()
 	const char* filename;
 	clock_t timer;
 	FILE *fileptr;
-	int userInput;
+	char *userInput;
 	
 	//Load lines into line[n].words
 	line[0].noOfLines = 0;
@@ -124,29 +124,33 @@ int main()
 	printf("3) Algorithm 3: Divide and Conquer\n");
 	printf("4) Algorithm 4: Linear-time\n");
 	 
-	scanf("%d", &userInput); 
+	scanf("%s", &userInput); 
 	 
 	 
-	switch(userInput) {
-		case '1':
-			//Run First Algorithim
-			algoOneMaxSubarray(&line);
-			break;
-		case '2':
-			//Run Test 2
-			printf("Algorithm 2: Better Enumeration");
-			break;
-		case '3':
-			//Run Test 3
-			printf("Algorithm 3: Divide and Conquer");
-			break;
-		case '4':
-			//Run Test 4
-			printf("Algorithm 4: Linear-time");
-			break;
-		default:
-			printf("Invalid Input.");
-			break;
+	if (userInput == "1")
+	{
+		//Run First Algorithim
+		algoOneMaxSubarray(&line);
+	}
+	else if (userInput == "2")
+	{
+		//Run Test 2
+		printf("Algorithm 2: Better Enumeration");
+		
+	}
+	else if (userInput == "3")
+	{
+		//Run Test 3
+		printf("Algorithm 3: Divide and Conquer");
+	}
+	else if (userInput == "4")
+	{
+		//Run Test 4
+		printf("Algorithm 4: Linear-time");
+	}
+	else
+	{
+		printf("Invalid Input.");
 	}
 	
 
