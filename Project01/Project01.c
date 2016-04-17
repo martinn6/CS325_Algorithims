@@ -141,7 +141,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		// recursive call that will calculate the sum of the left half
 		int firstHalfMax = algoThreeMaxSubArray(&line, lineNum, a, lo, midpoint);
 		// recursive call that will calculate the sum of the right half
-		//int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
+		int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
 
 		// get the max in the first half
 		int maxFirst = 0;
