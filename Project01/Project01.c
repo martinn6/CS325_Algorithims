@@ -118,6 +118,8 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 	
 	int subArrayFirst[100];
 	int subArraySecond[100];
+	int subArrayFirstLen = 0, 
+		subArraySecondLen = 0;
 	
 	
 	if (lo==hi) {
@@ -143,14 +145,19 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 			if (sum > maxFirst)
 			{
 				maxFirst = sum;
+				int c = 0;
 				for (int b = midpoint - 1; b <= i; b--)
 				{
-						//int c = 0;
-						subArrayFirst = line[a].num[b];
-						line[a].subArrayLength++;
+						subArrayFirst[c] = a[b];
+						subArrayFirstLen++;
+						c++;
 				}
 			}
 			printf("maxFirst=%d\n", maxFirst);
+			printf("subArrayFirst = ");
+			for (int i = 0; i < subArrayFirstLen; i++)
+				printf("%d ", subArrayFirst[i]);
+			
 		}
 		 
 		//find max in the second half
