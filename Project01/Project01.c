@@ -74,7 +74,7 @@ int main()
 	j = 0;
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		printf("line[%d].num[%d]=%d", i, j, line[i].num[j]);
+		printf("line[%d].num[%d]=%d\n", i, j, line[i].num[j]);
 	}
 	
 	 fclose(fileptr);
