@@ -20,7 +20,9 @@ This will take in an int array and output time.
 struct lines {
 	int num[50];
 	int subArray[50];
+	int subArray2[50];
 	int subArrayLength;
+	int subArray2Length;
 	char words[100];
 	int noOfLines;
 	int noOfnums;
@@ -29,6 +31,88 @@ struct lines {
 	long double time;
 };
 
+
+int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int hi) 
+{ 	//int a[], int lo, int hi
+	// base case: there's only one element present in the array
+	// return only element in the array
+	int combinedMax = 0;
+	// int tempArrayFirst[100];
+	// int tempArraySecond[100];
+	// int tempArrayFirstLen = 0, 
+		// tempArraySecondLen = 0;
+	
+	//array test
+	printf("lo = %d, hi = %d\n", lo, hi);
+	printf("a[] = ");
+	for (int i = 0; i < hi; i++)
+		printf("%d ", a[i]);
+	printf("\n");	
+	
+	if (lo==hi) {
+		printf("low = hi: a[hi]=%d\n", a[hi]);
+		return(0);
+	}
+	else
+	{			
+		// if the array contains more than one element, find the midpoint
+		int midpoint = (lo + hi)/2;
+		printf("lo = %d, hi = %d, midpoint = %d\n", lo, hi, midpoint);
+		 
+		// recursive call that will calculate the sum of the left half
+		int firstHalfMax = algoThreeMaxSubArray(&line, lineNum, a, lo, midpoint);
+		// recursive call that will calculate the sum of the right half
+		int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
+
+		// get the max in the first half
+		int maxFirst = 0;
+		int sum = 0;
+		for (int i = midpoint - 1; i >=0; i-- )
+		{
+			sum += a[i];
+			if (sum > maxFirst)
+			{
+				maxFirst = sum;
+				//get sub-array
+				line[lineNum].subArrayLength = 0; //reset array back to zero position
+				for (int b = i; b <= 0; b--)
+				{
+						line[lineNum].subArray[line[lineNum].subArrayLength] = a[b]; //subArray[position] = a[b]
+						line[lineNum].subArrayLength++; //increaes subArray length
+				}
+				printf("subArrayFirst = ");
+				for (int i = 0; i < tempArrayFirstLen; i++)
+					printf("%d ", tempArrayFirst[i]);
+				printf("\n");
+			}
+			
+			
+			
+		}
+		printf("maxFirst=%d\n", maxFirst); 
+		//find max in the second half
+		int maxSecond = 0;
+		sum = 0;
+		for (int i = midpoint; i < hi; i++ )
+		{
+			sum += a[i];
+			if (sum > maxSecond)
+				maxSecond = sum;
+			//printf("maxSecond=%d\n", maxSecond);
+		}
+		printf("maxSecond=%d\n", maxSecond);  
+		//combine the max sum
+		combinedMax = maxSecond + maxFirst;
+		
+	}
+	printf("combinedMax=%d\n", combinedMax);
+	printf("subArrayFirst = ");
+	for (int i = 0; i < subArrayFirstLen; i++)
+		printf("%d ", subArrayFirst[i]);
+	printf("\n");
+	return 0;
+	//return fmax(combinedMax, fmax(firstHalfMax, secondHalfMax));
+}
 
 int algoOneMaxSubarray(struct lines *line)
 {
@@ -111,88 +195,6 @@ int algoTwoMaxSubarray(struct lines *line)
 	return 0;
 }
 
-int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int hi) 
-{ 	//int a[], int lo, int hi
-	// base case: there's only one element present in the array
-	// return only element in the array
-	int combinedMax = 0;
-	int subArrayFirst[100];
-	int subArraySecond[100];
-	int subArrayFirstLen = 0, 
-		subArraySecondLen = 0;
-	
-	//array test
-	printf("lo = %d, hi = %d\n", lo, hi);
-	printf("a[] = ");
-	for (int i = 0; i < hi; i++)
-		printf("%d ", a[i]);
-	printf("\n");	
-	
-	if (lo==hi) {
-		printf("low = hi: a[hi]=%d\n", a[hi]);
-		return(0);
-	}
-	else
-	{			
-		// if the array contains more than one element, find the midpoint
-		int midpoint = (lo + hi)/2;
-		printf("lo = %d, hi = %d, midpoint = %d\n", lo, hi, midpoint);
-		 
-		// recursive call that will calculate the sum of the left half
-		int firstHalfMax = algoThreeMaxSubArray(&line, lineNum, a, lo, midpoint);
-		// recursive call that will calculate the sum of the right half
-		int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
-
-		// get the max in the first half
-		int maxFirst = 0;
-		int sum = 0;
-		for (int i = midpoint - 1; i >=0; i-- )
-		{
-			sum += a[i];
-			if (sum > maxFirst)
-			{
-				maxFirst = sum;
-				//get sub-array
-				int c = 0;
-				for (int b = i; b <= 0; b--)
-				{
-						subArrayFirst[c] = a[b];
-						subArrayFirstLen++;
-						c++;
-				}
-				printf("subArrayFirst = ");
-				for (int i = 0; i < subArrayFirstLen; i++)
-					printf("%d ", subArrayFirst[i]);
-				printf("\n");
-			}
-			
-			
-			
-		}
-		printf("maxFirst=%d\n", maxFirst); 
-		//find max in the second half
-		int maxSecond = 0;
-		sum = 0;
-		for (int i = midpoint; i < hi; i++ )
-		{
-			sum += a[i];
-			if (sum > maxSecond)
-				maxSecond = sum;
-			//printf("maxSecond=%d\n", maxSecond);
-		}
-		printf("maxSecond=%d\n", maxSecond);  
-		//combine the max sum
-		combinedMax = maxSecond + maxFirst;
-		
-	}
-	printf("combinedMax=%d\n", combinedMax);
-	printf("subArrayFirst = ");
-	for (int i = 0; i < subArrayFirstLen; i++)
-		printf("%d ", subArrayFirst[i]);
-	printf("\n");
-	return 0;
-	//return fmax(combinedMax, fmax(firstHalfMax, secondHalfMax));
-}
 
 
 int outputResults(struct lines *line)
