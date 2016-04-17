@@ -55,21 +55,21 @@ int main()
 		}
 	}
 	
-	int j = 0;
-	for (int i = 0; i < noOfLines; i++)
-	{
-		j = 0;
-		printf("Words[%d]=%s\n", i, line[i].words);
-		char *pt;
-		pt = strtok(line[i].words,",");
-		while (pt != NULL) {
-			if (pt[0] == '[')
-				pt[0] = ' ';
-			numArray[i][j] = atoi(pt);
-			pt = strtok (NULL, ",");
-			j++;
-		}
-	}
+	// int j = 0;
+	// for (int i = 0; i < line[0].noOfLines; i++)
+	// {
+		// j = 0;
+		// printf("Words[%d]=%s\n", i, line[i].words);
+		// char *pt;
+		// pt = strtok(line[i].words,",");
+		// while (pt != NULL) {
+			// if (pt[0] == '[')
+				// pt[0] = ' ';
+			// numArray[i][j] = atoi(pt);
+			// pt = strtok (NULL, ",");
+			// j++;
+		// }
+	// }
 	
 	
 	// for (int i = 0; i < 50; i++)
