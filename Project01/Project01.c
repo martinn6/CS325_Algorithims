@@ -114,6 +114,54 @@ int algoTwoMaxSubarray(struct lines *line)
 	return 0;
 }
 
+int algoThreeMaxSubArray(int a[], int lo, int hi) 
+{ 	//int a[], int lo, int hi
+	// base case: there's only one element present in the array
+	// return only element in the array
+	if (lo==hi) {
+		line.subArray[0] = line[a].num[hi];
+		line[a].subArrayLength = 1;
+	}
+	else
+	{			
+		// if the array contains more than one element, find the midpoint
+		midpoint = (lo + hi)/2;
+		 
+		// recursive call that will calculate the sum of the left half
+		int firstHalfMax = algoThreeMaxSubArray(a, lo, midpoint);
+		// recursive call that will calculate the sum of the right half
+		int secondHalfMax = algoThreeMaxSubArray(a, midpoint+1, hi);
+
+		// get the max in the first half
+		int maxFirst = 0;
+		int sum = 0;
+		for (int i = midpoint - 1; i >=0; i-- )
+		{
+			sum += a[i];
+			if (sum > maxFirst)
+				maxFirst = sum;
+			printf("maxFirst=%d\n", maxFirst);
+		}
+		 
+		//find max in the second half
+		int maxSecond = 0;
+		sum = 0;
+		for (int i = midpoint; i < hi; i++ )
+		{
+			sum += a[i];
+			if (sum > maxSecond)
+				maxSecond = sum;
+			printf("maxSecond=%d\n", maxSecond);
+		}
+		 
+		//combine the max sum
+		int combinedMax = maxSecond + maxFirst;
+		printf("combinedMax=%d\n", combinedMax);
+	}
+	return 0;
+	//return fmax(combinedMax, fmax(firstHalfMax, secondHalfMax));
+}
+
 
 int outputResults(struct lines *line)
 {
@@ -213,7 +261,10 @@ int main()
 	else if (strcmp(userInput,"3") == 0)
 	{
 		//Run Test 3
-		printf("Algorithm 3: Divide and Conquer");
+		for (int a = 0; a <= line[0].noOfLines; a++))
+		{
+			algoThreeMaxSubArray(line[a], 0, line[a].noOfNums);
+		}
 	}
 	else if (strcmp(userInput,"4") == 0)
 	{
