@@ -56,8 +56,7 @@ int main()
             fprintf(stderr,"Out of memory (3).\n");
             exit(4);
             }
-        if (fgets(words[i],maxLineLength-1,fileptr)==NULL)
-            break;
+        fgets(words[i],maxLineLength-1,fileptr);
 		
 	}
 	
