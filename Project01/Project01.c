@@ -111,7 +111,7 @@ int main()
 	//Run Test 1
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		enumeration1(line[i].num, line[i].noOfnums);
+		algoOneMaxSubarray(line[i].num, line[i].noOfnums);
 	}
 	
 	//Run Test 2
