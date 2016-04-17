@@ -44,7 +44,7 @@ int main()
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
-	
+	int i = 0;
 	while(1==1)
 	{
 		if (fgets(words[i],maxLineLength-1,fileptr)==NULL)
@@ -58,7 +58,7 @@ int main()
 		char *pt;
 		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11] ";
 		pt = strtok(str,",");
-		int i = 0;
+		i = 0;
 		while (pt != NULL) {
 			if (pt[0] == '[')
 				pt[0] = ' ';
