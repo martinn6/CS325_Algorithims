@@ -37,7 +37,7 @@ int main()
 	char **words = (char **)malloc(sizeof(char*)*maxLinesAllowed);
     if (words==NULL)
     {
-        fprintf(stderr,"Out of memory (1).\n");
+        fprintf(stderr,"Out of memory!\n");
         exit(1);
     }
 	
@@ -49,8 +49,8 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		if (fgets(mystring, 100, fileptr) != NULL)
-			printf ("%s", mystring);
+		if (fgets(words[0], 99, fileptr) != NULL)
+			printf ("%s", words[0]);
 		
 	}
 	
