@@ -101,7 +101,7 @@ int outputResults(struct lines *line)
 		}
 		printf("]\n");
 		printf("max sum = %d\n", line[i].maxArraySum);
-		printf("No. of Rows: %d Time taken: %d", line[i].noOfnums, line[i].time);
+		printf("No. of Rows: %d Time taken: %f", line[i].noOfnums, line[i].time);
 	}
 	return 0;
 }
