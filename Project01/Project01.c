@@ -21,6 +21,7 @@ struct lines {
 	char words[100];
     int maxLineLength;
 	int noOfLines;
+	int noOfnums;
 };
 
 
@@ -55,26 +56,28 @@ int main()
 		}
 	}
 	
-	int j = 0;
+
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		j = 0;
+		line[i].noOfnums = 0;
 		printf("Words[%d]=%s\n", i, line[i].words);
 		char *pt;
 		pt = strtok(line[i].words,",");
 		while (pt != NULL) {
 			if (pt[0] == '[')
 				pt[0] = ' ';
-			line[i].num[j] = atoi(pt);
+			line[i].num[line[i].noOfnums] = atoi(pt);
 			pt = strtok (NULL, ",");
-			j++;
+			line[i].noOfnums++;
 		}
 	}
 	
-	j = 0;
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		printf("line[%d].num[%d]=%d\n", i, j, line[i].num[j]);
+		for (int j = 0; j < line[i].noOfnums; j++)
+		{
+			printf("line[%d].num[%d]=%d\n", i, line[i].noOfnums, line[i].num[line[i].noOfnums]);
+		}
 	}
 	
 	 fclose(fileptr);
