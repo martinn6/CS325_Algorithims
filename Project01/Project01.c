@@ -59,7 +59,7 @@ int main()
 		char *pt;
 		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11] ";
 		pt = strtok(str,",");
-		i = 0;
+		int i = 0;
 		while (pt != NULL) {
 			if (pt[0] == '[')
 				pt[0] = ' ';
