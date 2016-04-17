@@ -25,7 +25,7 @@ struct lines {
 	int noOfnums;
 	int maxArraySum;
 	int maxArrayLength;
-	int time;
+	double time;
 };
 
 
@@ -36,10 +36,14 @@ int algoOneMaxSubarray(struct lines *line)
 	int maxArrayLen;
 	int sum = 0; // holds the sum
 	int maxSum = 0; // holds the max sum of the subarray
+	clock_t begin, end;
+	double time_spent;
 	//int len = 0;
+	
 	
 	for(int a = 0; a < line[0].noOfLines; a++)
 	{
+		begin = clock();
 		for(int i = 0; i < line[a].noOfnums; i++)
 		{
 			for(int j = i; j < line[a].noOfnums; j++) 
@@ -65,7 +69,11 @@ int algoOneMaxSubarray(struct lines *line)
 				}
 			}
 		}
+		end = clock();
+		time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+		line[a].time = time_spent;
 	}
+	
 	
 	return 0;
 } 
@@ -153,7 +161,6 @@ int main()
 	
 	scanf ("%[^\n]%*c", userInput);
 	
-	printf("strcmp=%d", strcmp(userInput,"1"));
 	if (strcmp(userInput,"1") == 0)
 	{
 		//Run First Algorithim
@@ -181,10 +188,7 @@ int main()
 	{
 		printf("Invalid Input.");
 	}
-	
 
-	
-	
 	//Exit
 	printf("\nHave a nice day.\n");
 	return 0;
