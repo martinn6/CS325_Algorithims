@@ -130,7 +130,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 	
 	if (lo==hi) {
 		printf("low = hi: a[hi]=%d\n", a[hi]);
-		return(0);
+		return(1);
 	}
 	else
 	{			
@@ -289,7 +289,7 @@ int main()
 		//for (int a = 0; a <= line[0].noOfLines; a++)
 			int a = 0;
 		//{
-			algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums); //struct, lineNum, numArray, lo, hi
+			algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums-1); //struct, lineNum, numArray, lo, hi
 		//}
 	}
 	else if (strcmp(userInput,"4") == 0)
