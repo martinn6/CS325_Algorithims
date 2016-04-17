@@ -115,7 +115,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 { 	//int a[], int lo, int hi
 	// base case: there's only one element present in the array
 	// return only element in the array
-	
+	int combinedMax = 0;
 	int subArrayFirst[100];
 	int subArraySecond[100];
 	int subArrayFirstLen = 0, 
@@ -179,7 +179,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		}
 		printf("maxSecond=%d\n", maxSecond);  
 		//combine the max sum
-		int combinedMax = maxSecond + maxFirst;
+		combinedMax = maxSecond + maxFirst;
 		
 	}
 	printf("combinedMax=%d\n", combinedMax);
