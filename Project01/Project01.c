@@ -82,6 +82,38 @@ int algoOneMaxSubarray(struct lines *line)
 	return 0;
 } 
 
+int algoTwoMaxSubarray(struct lines *line)
+{
+	int sum;
+	for (int a = 0; a < line[0].noOfLines; a++)
+	{
+		line[a].maxArraySum  = line[a].num[0]; // initialize maxSum
+		for(int i = 0; i < line[a].noOfnums; i++)
+		{
+			sum = 0; // initialize sume
+			for (int j = i; j < line[a].noOfnums; j++)
+			{
+				sum += line[a].num[j]; // add the values together
+				if(sum > line[a].maxArraySum)
+				{
+					// if the value in sum is greater than maxSum, then replace maxSum with sum
+					line[a].maxArraySum = sum;
+					
+					//get the subarray
+					for (int b = i; b <= j; b++)
+					{
+						int c = 0;
+						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
+						line[a].subArrayLength++;
+					}
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+
 int outputResults(struct lines *line)
 {
 	//Test Output
@@ -174,8 +206,8 @@ int main()
 	else if (strcmp(userInput,"2") == 0)
 	{
 		//Run Test 2
-		printf("Algorithm 2: Better Enumeration");
-		
+		algoTwoMaxSubarray(&line);
+		outputResults(&line);
 	}
 	else if (strcmp(userInput,"3") == 0)
 	{
