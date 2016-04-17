@@ -71,11 +71,11 @@ int main()
 		}
 	}
 	
-	
-	// for (int i = 0; i < 50; i++)
-	// {
-		// printf("numArray[%d] = %d ", i, numArray[i]);
-	// }
+	int j = 0;
+	for (int i = 0; i < line[0].noOfLines; i++)
+	{
+		printf("line[%d].num[%d]=%d", i, j, line[i].num[j]);
+	}
 	
 	 fclose(fileptr);
 	
