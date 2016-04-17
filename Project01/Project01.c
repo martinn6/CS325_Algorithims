@@ -29,11 +29,11 @@ int main()
 	clock_t timer;
 	FILE *fileptr;
 	int numArray[50];
-	int maxLinesAllowed = 10;
+	int maxLinesAllowed = 20;
     int maxLineLength = 100;
 	
 	//aloc memory//
-	char **words = (char **)malloc(sizeof(char*)*lines_allocated);
+	char **words = (char **)malloc(sizeof(char*)*maxLinesAllowed);
     if (words==NULL)
     {
         fprintf(stderr,"Out of memory (1).\n");
