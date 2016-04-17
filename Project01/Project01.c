@@ -126,7 +126,7 @@ int main()
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
 		for (int j = 0; j < line[i].noOfnums; j++)
-			printf("%i, ", line[i].num);
+			printf("%i, ", line[i].num[j]);
 		printf("\nmax length = %d\n", line[i].maxArrayLength);
 		printf("max sum = %d\n\n", line[i].maxArraySum);
 	}
