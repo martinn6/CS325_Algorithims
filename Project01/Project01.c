@@ -126,9 +126,9 @@ int main()
 	
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		printf("%s\n", line[j].words);
-		printf("max length = %d\n", line[j].maxArrayLength);
-		printf("max sum = %d\n\n", line[j].maxArraySum);
+		printf("%s\n", line[i].words);
+		printf("max length = %d\n", line[i].maxArrayLength);
+		printf("max sum = %d\n\n", line[i].maxArraySum);
 	}
 	
 	printf("\nHave a nice day.\n");
