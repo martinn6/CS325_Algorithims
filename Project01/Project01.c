@@ -44,13 +44,14 @@ int main()
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
-	int i = 0;
-	while(1==1)
-	{
-		if (fgets(words[i],maxLineLength-1,fileptr)==NULL)
-			break;
-		i++;
+	if(fileptr == NULL)
+		perror("error opening file");
+	else {
+		if (fgets(words[0], 100, fileptr) != NULL)
+			printf ("%s", words[0]);
+		
 	}
+	
 	
 	if(fileptr)
 	{
