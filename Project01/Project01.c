@@ -71,12 +71,6 @@ int algoOneMaxSubarray(struct lines *line)
 } 
 
 
-int algoOneMaxSubarray(struct lines *line)
-{
-	return 0;
-}
-
-
 int main()
 {
 	//Declare Variables
@@ -84,7 +78,7 @@ int main()
 	const char* filename;
 	clock_t timer;
 	FILE *fileptr;
-	char* userInput
+	char* userInput;
 	
 	//Load lines into line[n].words
 	line[0].noOfLines = 0;
