@@ -26,7 +26,7 @@ struct lines {
 	int noOfnums;
 	int maxArraySum;
 	int maxArrayLength;
-	float time;
+	long double time;
 };
 
 
@@ -76,8 +76,8 @@ int algoOneMaxSubarray(struct lines *line)
 			x++;
 		}
 		t = clock() - t;
-		printf("t2=%ld\n",t);
-		line[a].time = ((float)t)/CLOCKS_PER_SEC;
+		printf("t2=%lf\n",t);
+		line[a].time = ((long double)t)/CLOCKS_PER_SEC;
 	}
 	
 	
