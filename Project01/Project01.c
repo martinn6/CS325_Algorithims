@@ -26,7 +26,7 @@ struct lines {
 	int noOfnums;
 	int maxArraySum;
 	int maxArrayLength;
-	double time;
+	float time;
 };
 
 
@@ -37,14 +37,13 @@ int algoOneMaxSubarray(struct lines *line)
 	int maxArrayLen;
 	int sum = 0; // holds the sum
 	int maxSum = 0; // holds the max sum of the subarray
-	clock_t begin, end;
-	double time_spent;
+	clock_t t;
 	//int len = 0;
 	
 	
 	for(int a = 0; a < line[0].noOfLines; a++)
 	{
-		begin = clock();
+		t = clock();
 		for(int i = 0; i < line[a].noOfnums; i++)
 		{
 			for(int j = i; j < line[a].noOfnums; j++) 
@@ -71,9 +70,8 @@ int algoOneMaxSubarray(struct lines *line)
 			}
 		}
 		sleep(3);
-		end = clock();
-		time_spent = ((double)end - (double)begin) / CLOCKS_PER_SEC;
-		line[a].time = time_spent;
+		t = clock() - t;
+		line[a].time = ((float)t)/CLOCKS_PER_SEC;
 	}
 	
 	
