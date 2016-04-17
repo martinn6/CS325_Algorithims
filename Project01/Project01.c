@@ -80,7 +80,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 				for (int b = i; b >= 0; b--)
 				{
 					printf("%d, ",a[b]);
-					line.subArray[0] = a[b];
+					line[lineNum].subArray[0] = a[b];
 				}
 			}
 		}
