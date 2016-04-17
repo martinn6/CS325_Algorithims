@@ -19,9 +19,9 @@ This will take in an int array and output time.
 struct lines {
 	int numArray[50];
 	char words[100];
-	int maxLinesAllowed = 20;
-    int maxLineLength = 100;
-	int noOfLines = 0;
+	int maxLinesAllowed;
+    int maxLineLength;
+	int noOfLines;
 };
 
 
@@ -39,13 +39,6 @@ int main()
 	clock_t timer;
 	FILE *fileptr;
 	
-	//aloc memory//
-    if (words==NULL)
-    {
-        fprintf(stderr,"Out of memory!\n");
-        exit(1);
-    }
-	
 	//Load file
 	char buffer[100];
 	filename = "MSS_Problems.txt";
@@ -54,7 +47,7 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
+		while(fgets(buffer,line[0].maxLineLength-1,fileptr) != NULL)
 		{
 			printf("%s", buffer);
 			strncpy(line[noOfLines].words, buffer, 99);
