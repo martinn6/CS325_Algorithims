@@ -125,7 +125,7 @@ int main()
 	printf("4) Algorithm 4: Linear-time\n");
 	
 	
-	scanf("%s", &userInput); 
+	fgets (userInput, 100, stdin);
 	
 	 printf("userInput = %s", userInput);
 	 
