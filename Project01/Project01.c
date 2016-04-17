@@ -70,6 +70,33 @@ int algoOneMaxSubarray(struct lines *line)
 	return 0;
 } 
 
+int outputResults(struct lines *line)
+{
+	//Test Output
+	printf("Results:\n\n");
+	for (int i = 0; i < line[0].noOfLines; i++)
+	{
+		printf("[");
+		for (int j = 0; j < line[i].noOfnums; j++)
+		{
+			printf("%i", line[i].num[j]);
+			if(j != line[i].noOfnums - 1)
+				printf(", ");
+		}
+		printf("]\n");
+		printf("[");
+		for (int j = 0; j < line[i].subArrayLength; j++)
+		{
+			printf("%i", line[i].subArray[j]);
+			if(j != line[i].subArrayLength - 1)
+				printf(", ");
+		}
+		printf("]\n");
+		printf("max sum = %d\n\n", line[i].maxArraySum);
+	}
+	return 0;
+}
+
 
 int main()
 {
@@ -124,7 +151,7 @@ int main()
 	printf("3) Algorithm 3: Divide and Conquer\n");
 	printf("4) Algorithm 4: Linear-time\n");
 	
-	fgets (userInput, 100, stdin);
+	scanf ("%[^\n]%*c", userInput);
 	
 	printf("strcmp=%d", strcmp(userInput,"1"));
 	if (strcmp(userInput,"1") == 0)
@@ -132,6 +159,7 @@ int main()
 		//Run First Algorithim
 		printf("(1)");
 		algoOneMaxSubarray(&line);
+		outputResults(&line);
 	}
 	else if (strcmp(userInput,"2") == 0)
 	{
@@ -155,28 +183,7 @@ int main()
 	}
 	
 
-	//Test Output
-	printf("Results:\n\n");
-	for (int i = 0; i < line[0].noOfLines; i++)
-	{
-		printf("[");
-		for (int j = 0; j < line[i].noOfnums; j++)
-		{
-			printf("%i", line[i].num[j]);
-			if(j != line[i].noOfnums - 1)
-				printf(", ");
-		}
-		printf("]\n");
-		printf("[");
-		for (int j = 0; j < line[i].subArrayLength; j++)
-		{
-			printf("%i", line[i].subArray[j]);
-			if(j != line[i].subArrayLength - 1)
-				printf(", ");
-		}
-		printf("]\n");
-		printf("max sum = %d\n\n", line[i].maxArraySum);
-	}
+	
 	
 	//Exit
 	printf("\nHave a nice day.\n");
