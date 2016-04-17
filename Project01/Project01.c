@@ -102,9 +102,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		
 	}
 	printf("combinedMax=%d\n", combinedMax);
-	printf("TempArray1=");
-		for (int i = 0; i < n; i++)
-			printf("%d, ", tempArray1[n]);
+	
 	// printf("subArrayFirst = ");
 	// for (int i = 0; i < line[lineNum].subArrayLength; i++)
 		//printf("%d ", line[lineNum].subArray[i]);
