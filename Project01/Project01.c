@@ -91,7 +91,8 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 			}
 			
 		}
-		// printf("maxFirst=%d\n", maxFirst); 
+		printf("maxFirst=%d\n", maxFirst); 
+		printf("subArrayLength=%d\n", line[lineNum].subArrayLength);
 		//find max in the second half
 		int maxSecond = 0;
 		sum = 0;
