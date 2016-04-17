@@ -27,7 +27,7 @@ struct lines {
 };
 
 
-int algoOneMaxSubarray(struct lines *line[20])
+int algoOneMaxSubarray(struct lines **line)
 {
 	printf("test=%d",line[0].noOfnums);
 	// int cur; // possition of the current element in the subarray
