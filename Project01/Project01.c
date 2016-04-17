@@ -50,7 +50,7 @@ int main()
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
 			printf("%s", buffer);
-			strncpy(line[lines[0].noOfLines++;].words, buffer, 99);
+			strncpy(line[line[0].noOfLines].words, buffer, 99);
 			lines[0].noOfLines++;
 		}
 	}
