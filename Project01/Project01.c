@@ -19,7 +19,6 @@ This will take in an int array and output time.
 struct lines {
 	int numArray[50];
 	char words[100];
-	int maxLinesAllowed;
     int maxLineLength;
 	int noOfLines;
 };
@@ -47,7 +46,7 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		while(fgets(buffer,line[0].maxLineLength-1,fileptr) != NULL)
+		while(fgets(buffer,99,fileptr) != NULL)
 		{
 			printf("%s", buffer);
 			strncpy(line[noOfLines].words, buffer, 99);
