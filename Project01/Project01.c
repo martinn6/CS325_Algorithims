@@ -67,7 +67,7 @@ int main()
 					if(noOfLines >= maxLinesAllowed);
 					{
 						int new_size;
-						new_size = lines_allocated*2;
+						new_size = maxLinesAllowed*2;
 						words = (char **)realloc(words,sizeof(char*)*new_size);
 					}
 				}
