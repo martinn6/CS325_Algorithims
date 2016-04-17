@@ -130,7 +130,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 	
 	if (lo==hi) {
 		printf("low = hi: a[hi]=%d\n", a[hi]);
-		return(1);
+		return(0);
 	}
 	else
 	{			
@@ -141,7 +141,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		// recursive call that will calculate the sum of the left half
 		int firstHalfMax = algoThreeMaxSubArray(&line, lineNum, a, lo, midpoint);
 		// recursive call that will calculate the sum of the right half
-		int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
+		//int secondHalfMax = algoThreeMaxSubArray(&line, lineNum, a, midpoint+1, hi);
 
 		// get the max in the first half
 		int maxFirst = 0;
@@ -160,7 +160,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 						c++;
 				}
 			}
-			//printf("maxFirst=%d\n", maxFirst);
+			printf("maxFirst=%d\n", maxFirst);
 			//printf("subArrayFirst = ");
 			//for (int i = 0; i < subArrayFirstLen; i++)
 				//printf("%d ", subArrayFirst[i]);
@@ -289,7 +289,7 @@ int main()
 		//for (int a = 0; a <= line[0].noOfLines; a++)
 			int a = 0;
 		//{
-			algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums-1); //struct, lineNum, numArray, lo, hi
+			algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums); //struct, lineNum, numArray, lo, hi
 		//}
 	}
 	else if (strcmp(userInput,"4") == 0)
