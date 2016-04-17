@@ -49,25 +49,24 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		for (int i = 0; i <maxLinesAllowed; i++)
+		while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
 		{
-			words[i] = malloc(maxLineLength);
-			if (words[i]==NULL)
+			words[noOfLines] = malloc(maxLineLength);
+			if (words[noOfLines]==NULL)
 			{
 				fprintf(stderr,"Out of memory (3).\n");
 				exit(4);
             }
 			else
 			{
-				while(fgets(words[noOfLines],maxLineLength-1,fileptr) != NULL)
+				printf("%s", buffer);
+				strncpy(words[noOfLines], buffer);
+				noOfLines++;
+				if(noOfLines >= maxLinesAllowed);
 				{
-					noOfLines++;
-					if(noOfLines >= maxLinesAllowed);
-					{
-						int new_size;
-						new_size = maxLinesAllowed*2;
-						words = (char **)realloc(words,sizeof(char*)*new_size);
-					}
+					int new_size;
+					new_size = maxLinesAllowed*2;
+					words = (char **)realloc(words,sizeof(char*)*new_size);
 				}
 			}
 		}
