@@ -105,13 +105,7 @@ int main()
 		}
 	}
 	
-	for (int i = 0; i < line[0].noOfLines; i++)
-	{
-		for (int j = 0; j < line[i].noOfnums; j++)
-		{
-			printf("line[%d].num[%d]=%d\n", i, j, line[i].num[j]);
-		}
-	}
+	
 	
 	 fclose(fileptr);
 	 
@@ -129,6 +123,17 @@ int main()
 	//Run Test 4
 	//Close File
 	//Exit
+	
+	for (int i = 0; i < line[0].noOfLines; i++)
+	{
+		for (int j = 0; j < line[i].noOfnums; j++)
+		{
+			printf("%s\n", line[j].words);
+			printf("max length = %d\n", line[j].maxArrayLength);
+			printf("max sum = %d\n\n", line[j].maxArraySum);
+		}
+	}
+	
 	printf("\nHave a nice day.\n");
 	return 0;
 }
