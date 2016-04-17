@@ -69,7 +69,7 @@ int algoOneMaxSubarray(struct lines *line)
 				}
 			}
 		}
-		x=0;
+		int x=0;
 		while(x < 100000)
 		{
 			x++;
