@@ -284,7 +284,8 @@ int main()
 	else if (strcmp(userInput,"3") == 0)
 	{
 		//Run Test 3
-		for (int a = 0; a <= line[0].noOfLines; a++)
+		//for (int a = 0; a <= line[0].noOfLines; a++)
+		for (int a = 0; a <= 0; a++ ) //only 1 for test
 		{
 			algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums); //struct, lineNum, numArray, lo, hi
 		}
