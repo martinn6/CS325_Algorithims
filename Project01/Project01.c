@@ -44,7 +44,7 @@ int algoOneMaxSubarray(struct lines *line)
 	for(int a = 0; a < line[0].noOfLines; a++)
 	{
 		t = clock();
-		printf("t=%ld\n",t);
+		printf("t=%lf\n",t);
 		for(int i = 0; i < line[a].noOfnums; i++)
 		{
 			for(int j = i; j < line[a].noOfnums; j++) 
@@ -71,7 +71,7 @@ int algoOneMaxSubarray(struct lines *line)
 			}
 		}
 		int x=0;
-		while(x < 100000)
+		while(x < 1000000)
 		{
 			x++;
 		}
@@ -170,7 +170,6 @@ int main()
 	if (strcmp(userInput,"1") == 0)
 	{
 		//Run First Algorithim
-		printf("(1)");
 		algoOneMaxSubarray(&line);
 		outputResults(&line);
 	}
