@@ -51,7 +51,7 @@ int main()
 		{
 			printf("%s", buffer);
 			strncpy(line[line[0].noOfLines].words, buffer, 99);
-			lines[0].noOfLines++;
+			line[0].noOfLines++;
 		}
 	}
 	
