@@ -118,6 +118,11 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 { 	//int a[], int lo, int hi
 	// base case: there's only one element present in the array
 	// return only element in the array
+	/*
+	int subArrayFirst[100];
+	int subArraySecond[100];
+	
+	
 	if (lo==hi) {
 		printf("a[hi]=%d", a[hi]);
 		return(0);
@@ -139,7 +144,15 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 		{
 			sum += a[i];
 			if (sum > maxFirst)
+			{
 				maxFirst = sum;
+				for (int b = 0; b <= j; b++)
+				{
+						//int c = 0;
+						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
+						line[a].subArrayLength++;
+				}
+			}
 			printf("maxFirst=%d\n", maxFirst);
 		}
 		 
@@ -158,6 +171,7 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 		int combinedMax = maxSecond + maxFirst;
 		printf("combinedMax=%d\n", combinedMax);
 	}
+	*/
 	return 0;
 	//return fmax(combinedMax, fmax(firstHalfMax, secondHalfMax));
 }
