@@ -39,6 +39,7 @@ int main()
 	FILE *fileptr;
 	
 	//Load file
+	lines[0].noOfLines = 0;
 	char buffer[100];
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
@@ -49,8 +50,8 @@ int main()
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
 			printf("%s", buffer);
-			strncpy(line[noOfLines].words, buffer, 99);
-			noOfLines++;
+			strncpy(line[lines[0].noOfLines++;].words, buffer, 99);
+			lines[0].noOfLines++;
 		}
 	}
 	
