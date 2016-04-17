@@ -60,7 +60,11 @@ int main()
 			else
 			{
 				while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
+				{
 					printf("%s", buffer);
+					words[noOfLines] = &buffer;
+					noOfLines++;
+				}
 			}
 		}
 	}
@@ -75,7 +79,7 @@ int main()
 	{
 		printf("\nOpened file.\n");
 		char *pt;
-		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11] ";
+		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]";
 		pt = strtok(str,",");
 		int i = 0;
 		while (pt != NULL) {
