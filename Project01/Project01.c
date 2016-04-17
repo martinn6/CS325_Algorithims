@@ -27,7 +27,6 @@ struct lines {
 
 int algoOneMaxSubarray(int a[], int len)
 {
-	int  {
 	int cur; // possition of the current element in the subarray
 	int curArrayLen; // holds the length of the current subarray
 	int maxArrayLen;
