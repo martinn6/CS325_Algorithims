@@ -50,7 +50,7 @@ int main()
 		perror("error opening file");
 	else {
 		int i = 0;
-		words[i] = malloc(max_line_len);
+		words[i] = malloc(maxLineLength);
         if (words[i]==NULL)
             {
             fprintf(stderr,"Out of memory (3).\n");
