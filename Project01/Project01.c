@@ -180,9 +180,9 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		printf("maxSecond=%d\n", maxSecond);  
 		//combine the max sum
 		int combinedMax = maxSecond + maxFirst;
-		//printf("combinedMax=%d\n", combinedMax);
+		
 	}
-	
+	printf("combinedMax=%d\n", combinedMax);
 	return 0;
 	//return fmax(combinedMax, fmax(firstHalfMax, secondHalfMax));
 }
