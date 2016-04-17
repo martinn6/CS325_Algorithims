@@ -49,8 +49,15 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		if (fgets(words[0], 99, fileptr) != NULL)
-			printf ("%s", words[0]);
+		int i = 0;
+		words[i] = malloc(max_line_len);
+        if (words[i]==NULL)
+            {
+            fprintf(stderr,"Out of memory (3).\n");
+            exit(4);
+            }
+        if (fgets(words[i],maxLineLength-1,fileptr)==NULL)
+            break;
 		
 	}
 	
