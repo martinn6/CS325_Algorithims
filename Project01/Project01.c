@@ -88,7 +88,7 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		printf ("File Opened. Retreving Data.");
+		printf ("File Opened. Retreving Data.\n");
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
 			//printf("%s", buffer); //test buffer
@@ -126,6 +126,7 @@ int main()
 	//Exit
 	
 	/* TEST OUTPUT */
+	printf("Results:\n\n");
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
 		printf("[");
