@@ -29,40 +29,55 @@ int main()
 	clock_t timer;
 	FILE *fileptr;
 	int numArray[50];
+	int maxLinesAllowed = 10;
+    int maxLineLength = 100;
+	
+	//aloc memory//
+	char **words = (char **)malloc(sizeof(char*)*lines_allocated);
+    if (words==NULL)
+    {
+        fprintf(stderr,"Out of memory (1).\n");
+        exit(1);
+    }
 	
 	//Load file
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
 	
+	if (fgets(words[i],max_line_len-1,fileptr)==NULL)
+        break;
+	
 	if(fileptr)
 	{
 		printf("\nOpened file.\n");
 		char *pt;
 		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11] ";
-		//for (int i = 0; i < 50; i++)
-		//{
-			pt = strtok(str,",");
-			while (pt != NULL) {
-				if (pt[0] == '[')
-					pt[0] = ' ';
-				int a = atoi(pt);
-				printf("%d\n", a);
-				pt = strtok (NULL, ",");
-			}
-		//}
+		pt = strtok(str,",");
+		int i = 0;
+		while (pt != NULL) {
+			if (pt[0] == '[')
+				pt[0] = ' ';
+			int a = atoi(pt);
+			
+			printf("%d\n", a);
+			pt = strtok (NULL, ",");
+		}
 	}
 	else
 	{
 		printf("Error opening %s\n", filename);
 	}
 	
+	for(int j = 0; j < i; j++)
+        printf("%s\n", words[j]);
+	
 	for (int i = 0; i < 50; i++)
 	{
 		printf("numArray[%d] = %d ", i, numArray[i]);
 	}
 	
-	
+	 fclose(fileptr);
 	
 	//Run Test 1
 	enumeration1(0);
