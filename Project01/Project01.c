@@ -24,36 +24,41 @@ struct lines {
 	int noOfnums;
 	int maxArraySum;
 	int maxArrayLength;
+	int time;
 };
 
 
-int algoOneMaxSubarray(struct lines **line)
+int algoOneMaxSubarray(lines *line)
 {
-	printf("test=%d",line[0].noOfnums);
-	// int cur; // possition of the current element in the subarray
-	// int curArrayLen; // holds the length of the current subarray
-	// int maxArrayLen;
-	// int sum = 0; // holds the sum
-	// int maxSum = 0; // holds the max sum of the subarray
- 
-	// for(int i = 0; i < len; i++)
-	// {
-		// for(int j = i; j < len; j++) 
-		// {
-			// sum = 0; 
-			// curArrayLen = 0; // reset the subarray length
-			// for(cur = i; cur <= j; cur++) 
-			// {
-				// sum += a[cur]; // add the current element to the sum
-				// curArrayLen++; // increment the current subarray length
-			// }
-			// if(sum > maxSum) { // if the current sum is greater than the current max sum, replace it
-				// maxSum = sum; // reset the max subarray sum
-				// maxArrayLen = curArrayLen; // reset the max subarray length
-			// }
-		// }
-	// }
-	// printf("maxArrayLen = %d\n", maxArrayLen);
+	int cur; // possition of the current element in the subarray
+	int curArrayLen; // holds the length of the current subarray
+	int maxArrayLen;
+	int sum = 0; // holds the sum
+	int maxSum = 0; // holds the max sum of the subarray
+	//int len = 0;
+	
+	for(int a = 0; a < line[0].noOfLines; a++)
+	{
+		
+		for(int i = 0; i < line[a].noOfnums; i++)
+		{
+			for(int j = i; j < line[a].noOfnums; j++) 
+			{
+				sum = 0; 
+				curArrayLen = 0; // reset the subarray length
+				for(cur = i; cur <= j; cur++) 
+				{
+					sum += a[cur]; // add the current element to the sum
+					curArrayLen++; // increment the current subarray length
+				}
+				if(sum > maxSum) { // if the current sum is greater than the current max sum, replace it
+					line[a].maxArraySum = sum; // reset the max subarray sum
+					line[a].maxArrayLength = curArrayLen; // reset the max subarray length
+				}
+			}
+		}
+	}
+	printf("maxArrayLen = %d\n", maxArrayLen);
 	
 	return 0;
 } 
