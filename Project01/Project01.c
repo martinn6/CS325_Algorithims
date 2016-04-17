@@ -119,10 +119,10 @@ int main()
 	 
 	//ask user for which algorithm to run
 	printf("Choose which algorithim to run:\n");
-	printf("1) Algorithm 1: Enumeration");
-	printf("2) Algorithm 2: Better Enumeration");
-	printf("3) Algorithm 3: Divide and Conquer");
-	printf("4) Algorithm 4: Linear-time");
+	printf("1) Algorithm 1: Enumeration\n");
+	printf("2) Algorithm 2: Better Enumeration\n");
+	printf("3) Algorithm 3: Divide and Conquer\n");
+	printf("4) Algorithm 4: Linear-time\n");
 	 
 	scanf("%d", &userInput); 
 	 
@@ -146,6 +146,7 @@ int main()
 			break;
 		default:
 			printf("Invalid Input.");
+			break;
 	}
 	
 
