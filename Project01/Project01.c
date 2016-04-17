@@ -64,7 +64,11 @@ int main()
 			}
 		}
 	}
-	 printf("Words=%s\n", words[0]);
+	
+	for (int i = 0; i < 20; i++)
+	{
+		printf("Words=%s\n", words[0]);
+	}
 	
 	
 	if(fileptr)
