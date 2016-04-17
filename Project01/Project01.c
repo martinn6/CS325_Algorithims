@@ -76,7 +76,7 @@ int main()
 	{
 		for (int j = 0; j < line[i].noOfnums; j++)
 		{
-			printf("line[%d].num[%d]=%d\n", i, line[i].noOfnums, line[i].num[line[i].noOfnums]);
+			printf("line[%d].num[%d]=%d\n", i, j, line[i].num[j]);
 		}
 	}
 	
