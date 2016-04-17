@@ -119,8 +119,8 @@ int algoThreeMaxSubArray(int a[], int lo, int hi)
 	// base case: there's only one element present in the array
 	// return only element in the array
 	if (lo==hi) {
-		line.subArray[0] = line[a].num[hi];
-		line[a].subArrayLength = 1;
+		printf("a[hi]=%d", a[hi]);
+		return(0);
 	}
 	else
 	{			
@@ -263,7 +263,7 @@ int main()
 		//Run Test 3
 		for (int a = 0; a <= line[0].noOfLines; a++))
 		{
-			algoThreeMaxSubArray(line[a], 0, line[a].noOfNums);
+			algoThreeMaxSubArray(line[a].num, 0, line[a].noOfNums);
 		}
 	}
 	else if (strcmp(userInput,"4") == 0)
