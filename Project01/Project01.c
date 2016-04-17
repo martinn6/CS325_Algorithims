@@ -63,7 +63,7 @@ int algoOneMaxSubarray(struct lines *line)
 					line[a].subArrayLength = 0;
 					for (int b = i; b <= j; b++)
 					{
-						int c = 0;
+						//int c = 0;
 						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
 						line[a].subArrayLength++;
 					}
@@ -102,7 +102,7 @@ int algoTwoMaxSubarray(struct lines *line)
 					//get the subarray
 					for (int b = i; b <= j; b++)
 					{
-						int c = 0;
+						//int c = 0;
 						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
 						line[a].subArrayLength++;
 					}
