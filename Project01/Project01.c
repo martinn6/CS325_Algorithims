@@ -28,7 +28,7 @@ struct lines {
 };
 
 
-int algoOneMaxSubarray(lines *line)
+int algoOneMaxSubarray(struct lines *line)
 {
 	int cur; // possition of the current element in the subarray
 	int curArrayLen; // holds the length of the current subarray
