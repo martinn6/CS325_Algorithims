@@ -127,23 +127,23 @@ int main()
 	scanf("%s", &userInput); 
 	 
 	 
-	if (userInput == "1")
+	if (strcmp(userInput,"1") == 0)
 	{
 		//Run First Algorithim
 		algoOneMaxSubarray(&line);
 	}
-	else if (userInput == "2")
+	else if (strcmp(userInput,"2") == 0)
 	{
 		//Run Test 2
 		printf("Algorithm 2: Better Enumeration");
 		
 	}
-	else if (userInput == "3")
+	else if (strcmp(userInput,"3") == 0)
 	{
 		//Run Test 3
 		printf("Algorithm 3: Divide and Conquer");
 	}
-	else if (userInput == "4")
+	else if (strcmp(userInput,"4") == 0)
 	{
 		//Run Test 4
 		printf("Algorithm 4: Linear-time");
