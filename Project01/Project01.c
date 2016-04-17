@@ -47,7 +47,7 @@ int algoOneMaxSubarray(struct lines *line)
 				curArrayLen = 0; // reset the subarray length
 				for(cur = i; cur <= j; cur++) 
 				{
-					printf("(cur=%d, array=%d) ", i, j, cur, line[a].num[cur]);
+					printf("(a=%d, cur=%d, array=%d) ",a, i, j, cur, line[a].num[cur]);
 					sum += line[a].num[cur]; // add the current element to the sum
 					curArrayLen++; // increment the current subarray length
 				}
