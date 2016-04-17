@@ -48,8 +48,8 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
-		if (fgets(words[noOfLines], 100, fileptr) != NULL)
-			printf ("%s", words[noOfLines]);
+		// if (fgets(words[noOfLines], 100, fileptr) != NULL)
+			// printf ("%s", words[noOfLines]);
 		
 	}
 	
@@ -78,10 +78,10 @@ int main()
 	for(int j = 0; j < noOfLines; j++)
         printf("%s\n", words[0]);
 	
-	for (int i = 0; i < 50; i++)
-	{
-		printf("numArray[%d] = %d ", i, numArray[i]);
-	}
+	// for (int i = 0; i < 50; i++)
+	// {
+		// printf("numArray[%d] = %d ", i, numArray[i]);
+	// }
 	
 	 fclose(fileptr);
 	
