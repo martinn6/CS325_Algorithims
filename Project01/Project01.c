@@ -131,15 +131,24 @@ int main()
 	//Close File
 	//Exit
 	
+	/* TEST OUTPUT */
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
 		printf("[");
 		for (int j = 0; j < line[i].noOfnums; j++)
-			printf("%i, ", line[i].num[j]);
+		{
+			printf("%i", line[i].num[j]);
+			if(j != line[i].noOfnums - 1)
+				printf(",");
+		}
 		printf("]\n");
 		printf("[");
 		for (int j = 0; j < line[i].subArrayLength; j++)
-			printf("%i, ", line[i].subArray[j]);
+		{
+			printf("%i", line[i].subArray[j]);
+			if(j != line[i].noOfnums - 1)
+				printf(", ");
+		}
 		printf("]\n");
 		printf("max sum = %d\n\n", line[i].maxArraySum);
 	}
