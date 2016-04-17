@@ -16,6 +16,15 @@
 This will take in an int array and output time.
 \***********************************************************************/
 
+struct lines {
+	int numArray[50];
+	char *words;
+	int maxLinesAllowed = 20;
+    int maxLineLength = 100;
+	int noOfLines = 0;
+}
+
+
 int enumeration1(int n)
 {
 	return 0;
@@ -25,16 +34,12 @@ int enumeration1(int n)
 int main()
 {
 	//Declare Variables
+	struct lines line[20];
 	const char* filename;
 	clock_t timer;
 	FILE *fileptr;
-	int numArray[20][50];
-	int maxLinesAllowed = 20;
-    int maxLineLength = 100;
-	int noOfLines = 0;
 	
 	//aloc memory//
-	char **words = (char **)malloc(sizeof(char*)*maxLinesAllowed);
     if (words==NULL)
     {
         fprintf(stderr,"Out of memory!\n");
@@ -42,7 +47,7 @@ int main()
     }
 	
 	//Load file
-	char buffer [100];
+	char buffer[100];
 	filename = "MSS_Problems.txt";
 	printf("opening file: %s\n", filename);
 	fileptr = fopen(filename, "r");
@@ -51,24 +56,9 @@ int main()
 	else {
 		while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
 		{
-			words[noOfLines] = malloc(maxLineLength);
-			if (words[noOfLines]==NULL)
-			{
-				fprintf(stderr,"Out of memory (3).\n");
-				exit(4);
-            }
-			else
-			{
-				printf("%s", buffer);
-				strncpy(words[noOfLines], buffer, 99);
-				noOfLines++;
-				if(noOfLines >= maxLinesAllowed);
-				{
-					int new_size;
-					new_size = maxLinesAllowed*2;
-					words = (char **)realloc(words,sizeof(char*)*new_size);
-				}
-			}
+			printf("%s", buffer);
+			strncpy(line[noOfLines].words, buffer, 99);
+			noOfLines++;
 		}
 	}
 	
@@ -76,9 +66,9 @@ int main()
 	for (int i = 0; i < noOfLines; i++)
 	{
 		j = 0;
-		printf("Words[%d]=%s\n", i, words[i]);
+		printf("Words[%d]=%s\n", i, line[i].words);
 		char *pt;
-		pt = strtok(words[i],",");
+		pt = strtok(line[i].words,",");
 		while (pt != NULL) {
 			if (pt[0] == '[')
 				pt[0] = ' ';
@@ -87,8 +77,6 @@ int main()
 			j++;
 		}
 	}
-	
-    printf("numArray[0][0] = %d", numArray[0][0]);
 	
 	
 	// for (int i = 0; i < 50; i++)
