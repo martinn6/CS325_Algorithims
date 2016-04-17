@@ -79,7 +79,7 @@ int main()
 	clock_t timer;
 	FILE *fileptr;
 	
-	//Load file
+	//Load lines into line[n].words
 	line[0].noOfLines = 0;
 	char buffer[100];
 	filename = "MSS_Problems.txt";
@@ -88,16 +88,16 @@ int main()
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
+		printf ("File Opened. Retreving Data.");
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
-			printf ("File Opened.\n\n");
 			//printf("%s", buffer); //test buffer
 			strncpy(line[line[0].noOfLines].words, buffer, 99);
 			line[0].noOfLines++;
 		}
 	}
 	
-
+    //parse numbers from lines into array
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
 		line[i].noOfnums = 0;
@@ -113,17 +113,10 @@ int main()
 		}
 	}
 	
-	
-	
-	 fclose(fileptr);
+	//close file
+	fclose(fileptr);
 	 
-	 
-	
-	//Run Test 1
-	// for (int i = 0; i < line[0].noOfLines; i++)
-	// {
-		// algoOneMaxSubarray(line[i].num, line[i].noOfnums);
-	// }
+	//Run First Algorithim
 	algoOneMaxSubarray(&line);
 	
 	//Run Test 2
