@@ -118,7 +118,6 @@ int main()
 	//Declare Variables
 	struct lines line[20];
 	const char* filename;
-	clock_t timer;
 	FILE *fileptr;
 	char *userInput = (char*) malloc(100);
 	
