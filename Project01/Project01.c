@@ -83,13 +83,14 @@ int main()
 	line[0].noOfLines = 0;
 	char buffer[100];
 	filename = "MSS_Problems.txt";
-	printf("opening file: %s\n", filename);
+	printf("opening file: %s...\n", filename);
 	fileptr = fopen(filename, "r");
 	if(fileptr == NULL)
 		perror("error opening file");
 	else {
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
+			printf ("File Opened.\n\n");
 			//printf("%s", buffer); //test buffer
 			strncpy(line[line[0].noOfLines].words, buffer, 99);
 			line[0].noOfLines++;
