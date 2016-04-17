@@ -126,10 +126,11 @@ int main()
 	
 	fgets (userInput, 100, stdin);
 	
-	 
+	printf("strcmp=%d", strcmp(userInput,"1"));
 	if (strcmp(userInput,"1") == 0)
 	{
 		//Run First Algorithim
+		printf("(1)");
 		algoOneMaxSubarray(&line);
 	}
 	else if (strcmp(userInput,"2") == 0)
