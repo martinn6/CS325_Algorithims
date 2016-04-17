@@ -139,14 +139,14 @@ int main()
 		{
 			printf("%i", line[i].num[j]);
 			if(j != line[i].noOfnums - 1)
-				printf(",");
+				printf(", ");
 		}
 		printf("]\n");
 		printf("[");
 		for (int j = 0; j < line[i].subArrayLength; j++)
 		{
 			printf("%i", line[i].subArray[j]);
-			if(j != line[i].noOfnums - 1)
+			if(j != line[i].subArrayLength - 1)
 				printf(", ");
 		}
 		printf("]\n");
