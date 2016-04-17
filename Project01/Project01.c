@@ -18,7 +18,7 @@ This will take in an int array and output time.
 
 struct lines {
 	int numArray[50];
-	char *words;
+	char words[100];
 	int maxLinesAllowed = 20;
     int maxLineLength = 100;
 	int noOfLines = 0;
