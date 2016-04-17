@@ -263,7 +263,7 @@ int main()
 		//Run Test 3
 		for (int a = 0; a <= line[0].noOfLines; a++)
 		{
-			algoThreeMaxSubArray(line[a].num, 0, line[a].noOfNums);
+			algoThreeMaxSubArray(line[a].num, 0, line[a].noOfnums);
 		}
 	}
 	else if (strcmp(userInput,"4") == 0)
