@@ -76,16 +76,15 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 				maxFirst = sum;
 				//get sub-array
 				line[lineNum].subArrayLength = 0; //reset array back to zero position
+				printf("subarray[]=");
 				for (int b = i; b >= 0; b--)
 				{
-					printf("i=%d", i);
-					printf("b=%d", b);
-					printf("subarray[]= %d, ", a[b]);
+					printf("%d, ", a[b]);
 					getchar();
 						//line[lineNum].subArray[0] = a[b]; //subArray[position] = a[b]
 						//line[lineNum].subArrayLength = 1; //increaes subArray length
 				}
-				// printf("\n");
+				printf("\n");
 				// printf("subArrayLength=%d", line[lineNum].subArrayLength);
 				// printf("subArrayFirst = ");
 				// for (int i = 0; i < line[lineNum].subArrayLength; i++)
