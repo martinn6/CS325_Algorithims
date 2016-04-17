@@ -59,10 +59,8 @@ int main()
             }
 			else
 			{
-				while(fgets(buffer,maxLineLength-1,fileptr) != NULL)
+				while(fgets(words[noOfLines],maxLineLength-1,fileptr) != NULL)
 				{
-					printf("%s", buffer);
-					strcpy(words[noOfLines], buffer);
 					noOfLines++;
 					if(noOfLines >= maxLinesAllowed);
 					{
