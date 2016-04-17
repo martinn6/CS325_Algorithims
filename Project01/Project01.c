@@ -69,7 +69,11 @@ int algoOneMaxSubarray(struct lines *line)
 				}
 			}
 		}
-		sleep(3);
+		x=0;
+		while(x < 1000000)
+		{
+			x++;
+		}
 		t = clock() - t;
 		line[a].time = ((float)t)/CLOCKS_PER_SEC;
 	}
