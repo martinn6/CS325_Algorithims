@@ -75,7 +75,7 @@ int algoOneMaxSubarray(struct lines *line)
 		getchar();
 		end_t = clock();
 		printf("t2=%ld\n",end_t);
-		line[a].time = (long double)(end_t-start_t)/CLOCKS_PER_SEC;
+		line[a].time = (long double)(end_t-start_t)/(1.0*CLOCKS_PER_SEC);
 	}
 	
 	
