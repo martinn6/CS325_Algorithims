@@ -70,11 +70,12 @@ int algoOneMaxSubarray(struct lines *line)
 			}
 		}
 		x=0;
-		while(x < 1000000)
+		while(x < 100000)
 		{
 			x++;
 		}
 		t = clock() - t;
+		printf("t=%d\n",t);
 		line[a].time = ((float)t)/CLOCKS_PER_SEC;
 	}
 	
