@@ -19,7 +19,6 @@ This will take in an int array and output time.
 struct lines {
 	int num[50];
 	char words[100];
-    int maxLineLength;
 	int noOfLines;
 	int noOfnums;
 	int maxArraySum;
@@ -126,8 +125,9 @@ int main()
 	
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		printf("%s\n", line[i].words);
-		printf("max length = %d\n", line[i].maxArrayLength);
+		for (int j = 0; j < line[i].noOfnums; j++)
+			printf("%i, ", line[i].num);
+		printf("\nmax length = %d\n", line[i].maxArrayLength);
 		printf("max sum = %d\n\n", line[i].maxArraySum);
 	}
 	
