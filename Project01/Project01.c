@@ -28,7 +28,7 @@ int main()
 	const char* filename;
 	clock_t timer;
 	FILE *fileptr;
-	int numArray[50];
+	int numArray[20][50];
 	int maxLinesAllowed = 20;
     int maxLineLength = 100;
 	int noOfLines = 0;
@@ -72,34 +72,24 @@ int main()
 		}
 	}
 	
+	int j = 0;
 	for (int i = 0; i < noOfLines; i++)
 	{
+		j = 0;
 		printf("Words[%d]=%s\n", i, words[i]);
-	}
-	
-	
-	if(fileptr)
-	{
-		printf("\nOpened file.\n");
 		char *pt;
-		char str[] ="[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]";
-		pt = strtok(str,",");
-		int i = 0;
+		pt = strtok(words[i],",");
 		while (pt != NULL) {
 			if (pt[0] == '[')
 				pt[0] = ' ';
-			int a = atoi(pt);
-			
-			printf("%d\n", a);
+			numArray[i][j] = atoi(pt);
 			pt = strtok (NULL, ",");
+			j++;
 		}
 	}
-	else
-	{
-		printf("Error opening %s\n", filename);
-	}
 	
-       
+    printf("numArray[0][0] = %d", numArray[0][0]);
+	
 	
 	// for (int i = 0; i < 50; i++)
 	// {
