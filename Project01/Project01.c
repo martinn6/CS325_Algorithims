@@ -6,7 +6,6 @@
  * Description: Fibonacci recusive program
  * *******************************************************************************************/
 
-#include <conio.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -83,7 +82,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 					printf("i=%d", i);
 					printf("b=%d", b);
 					printf("%d, ", a[b]);
-					getchr();
+					getchar();
 						//line[lineNum].subArray[0] = a[b]; //subArray[position] = a[b]
 						//line[lineNum].subArrayLength = 1; //increaes subArray length
 				}
