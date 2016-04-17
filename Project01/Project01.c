@@ -128,7 +128,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 	printf("\n");	
 	
 	if (lo==hi) {
-		printf("a[hi]=%d", a[hi]);
+		printf("low = hi: a[hi]=%d\n", a[hi]);
 		return(0);
 	}
 	else
@@ -161,7 +161,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 			//printf("maxFirst=%d\n", maxFirst);
 			//printf("subArrayFirst = ");
 			for (int i = 0; i < subArrayFirstLen; i++)
-				printf("%d ", subArrayFirst[i]);
+				//printf("%d ", subArrayFirst[i]);
 			
 		}
 		 
