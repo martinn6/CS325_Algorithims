@@ -56,7 +56,7 @@ int algoOneMaxSubarray(struct lines *line)
 					line[a].maxArrayLength = curArrayLen; // reset the max subarray length
 					//copy substring to subArray
 					line[a].subArrayLength = 0;
-					for (int b = i; b < j; b++)
+					for (int b = i; b <= j; b++)
 					{
 						int c = 0;
 						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
