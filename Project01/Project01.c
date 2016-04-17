@@ -19,6 +19,7 @@ This will take in an int array and output time.
 struct lines {
 	int num[50];
 	int subArray[50];
+	int subArrayLength;
 	char words[100];
 	int noOfLines;
 	int noOfnums;
@@ -47,14 +48,20 @@ int algoOneMaxSubarray(struct lines *line)
 				curArrayLen = 0; // reset the subarray length
 				for(cur = i; cur <= j; cur++) 
 				{
-					printf("(a=%d, cur=%d, array=%d) ",a, i, j, cur, line[a].num[cur]);
 					sum += line[a].num[cur]; // add the current element to the sum
 					curArrayLen++; // increment the current subarray length
 				}
 				if(sum > line[a].maxArraySum) { // if the current sum is greater than the current max sum, replace it
 					line[a].maxArraySum = sum; // reset the max subarray sum
 					line[a].maxArrayLength = curArrayLen; // reset the max subarray length
-					printf("\nmax sum found=%d\n",sum);
+					//copy substring to subArray
+					line[a].subArrayLength = 0;
+					for (int b = i; b < j; b++)
+					{
+						int c = 0;
+						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
+						line[a].subArrayLength++;
+					}
 				}
 			}
 		}
@@ -130,7 +137,10 @@ int main()
 		for (int j = 0; j < line[i].noOfnums; j++)
 			printf("%i, ", line[i].num[j]);
 		printf("]\n");
-		printf("max length = %d\n", line[i].maxArrayLength);
+		printf("[");
+		for (int j = 0; j < line[i].subArrayLength; j++)
+			printf("%i, ", line[i].subArray[j]);
+		printf("]\n");
 		printf("max sum = %d\n\n", line[i].maxArraySum);
 	}
 	
