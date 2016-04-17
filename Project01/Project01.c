@@ -78,7 +78,7 @@ int main()
 	const char* filename;
 	clock_t timer;
 	FILE *fileptr;
-	char* userInput;
+	int userInput;
 	
 	//Load lines into line[n].words
 	line[0].noOfLines = 0;
@@ -124,7 +124,7 @@ int main()
 	printf("3) Algorithm 3: Divide and Conquer");
 	printf("4) Algorithm 4: Linear-time");
 	 
-	scanf("%s", &userInput); 
+	scanf("%d", &userInput); 
 	 
 	 
 	switch(userInput) {
