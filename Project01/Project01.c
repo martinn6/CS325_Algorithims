@@ -22,35 +22,39 @@ struct lines {
     int maxLineLength;
 	int noOfLines;
 	int noOfnums;
+	int maxArraySum;
+	int maxArrayLength;
 };
 
 
-int algoOneMaxSubarray(int a[], int len)
+int algoOneMaxSubarray(struct line[])
 {
-	int cur; // possition of the current element in the subarray
-	int curArrayLen; // holds the length of the current subarray
-	int maxArrayLen;
-	int sum = 0; // holds the sum
-	int maxSum = 0; // holds the max sum of the subarray
+	printf("test=%d",line[0].noOfnums);
+	// int cur; // possition of the current element in the subarray
+	// int curArrayLen; // holds the length of the current subarray
+	// int maxArrayLen;
+	// int sum = 0; // holds the sum
+	// int maxSum = 0; // holds the max sum of the subarray
  
-	for(int i = 0; i < len; i++)
-	{
-		for(int j = i; j < len; j++) 
-		{
-			sum = 0; 
-			curArrayLen = 0; // reset the subarray length
-			for(cur = i; cur <= j; cur++) 
-			{
-				sum += a[cur]; // add the current element to the sum
-				curArrayLen++; // increment the current subarray length
-			}
-			if(sum > maxSum) { // if the current sum is greater than the current max sum, replace it
-				maxSum = sum; // reset the max subarray sum
-				maxArrayLen = curArrayLen; // reset the max subarray length
-			}
-		}
-	}
-	printf("maxArrayLen = %d\n", maxArrayLen);
+	// for(int i = 0; i < len; i++)
+	// {
+		// for(int j = i; j < len; j++) 
+		// {
+			// sum = 0; 
+			// curArrayLen = 0; // reset the subarray length
+			// for(cur = i; cur <= j; cur++) 
+			// {
+				// sum += a[cur]; // add the current element to the sum
+				// curArrayLen++; // increment the current subarray length
+			// }
+			// if(sum > maxSum) { // if the current sum is greater than the current max sum, replace it
+				// maxSum = sum; // reset the max subarray sum
+				// maxArrayLen = curArrayLen; // reset the max subarray length
+			// }
+		// }
+	// }
+	// printf("maxArrayLen = %d\n", maxArrayLen);
+	
 	return 0;
 } 
 
@@ -109,10 +113,11 @@ int main()
 	 
 	
 	//Run Test 1
-	for (int i = 0; i < line[0].noOfLines; i++)
-	{
-		algoOneMaxSubarray(line[i].num, line[i].noOfnums);
-	}
+	// for (int i = 0; i < line[0].noOfLines; i++)
+	// {
+		// algoOneMaxSubarray(line[i].num, line[i].noOfnums);
+	// }
+	algoOneMaxSubarray(&line);
 	
 	//Run Test 2
 	//Run Test 3
