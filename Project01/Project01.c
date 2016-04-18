@@ -56,6 +56,9 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		if (temp_sum > sum)
 			sum = temp_sum;
 	}
+	
+	printf("left=%d ", left);
+	printf("right=%d ", right);
 
 	//copy subarray to struct
 	int n = 0;
