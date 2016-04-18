@@ -337,6 +337,7 @@ int main()
 	{
 		int a = 0;
 		algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums); //struct, lineNum, numArray, lo, hi
+		outputResults(&line);
 	}
 	else if (strcmp(userInput,"4") == 0)
 	{
