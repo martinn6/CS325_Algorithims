@@ -274,7 +274,7 @@ int outputResultsToFile(struct lines *line)
 	FILE *fp;
 	const char* outfilename;
 	outfilename = "MSS_Results.txt";
-	fp = fopen(filename, "w");
+	fp = fopen(outfilename, "w");
 	//printf("Results:\n\n");
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
