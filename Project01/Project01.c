@@ -278,23 +278,23 @@ int outputResultsToFile(struct lines *line)
 	//printf("Results:\n\n");
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
-		fprintf("[");
+		fprintf(fp,"%s","[");
 		for (int j = 0; j < line[i].noOfnums; j++)
 		{
-			fprintf("%i", line[i].num[j]);
+			fprintf(fp,"%i", line[i].num[j]);
 			if(j != line[i].noOfnums - 1)
-				fprintf(", ");
+				fprintf(fp,"%s",", ");
 		}
-		fprintf("]\n");
-		fprintf("[");
+		fprintf(fp,"%s","]\n");
+		fprintf(fp,"%s","[");
 		for (int j = 0; j < line[i].subArrayLength; j++)
 		{
-			fprintf("%i", line[i].subArray[j]);
+			fprintf(fp,"%i", line[i].subArray[j]);
 			if(j != line[i].subArrayLength - 1)
-				fprintf(", ");
+				fprintf(fp,"%s",", ");
 		}
-		fprintf("]\n");
-		fprintf("max sum = %d\n", line[i].maxArraySum);
+		fprintf(fp,"%s","]\n");
+		fprintf(fp,"%s %d %s","max sum = ", line[i].maxArraySum,"\n");
 	}
 	//close file
 	fclose(fp);
