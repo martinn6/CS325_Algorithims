@@ -47,7 +47,7 @@ int algoFourLinearTime(int a[], int arrayLen)
 		if(temp_sum + a[i] > 0)
 		{
 			temp_sum = temp_sum + a[i];
-			right = i;
+			right = i-1;
 		}
 		else { 
 			temp_sum = 0;
