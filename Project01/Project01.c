@@ -360,7 +360,8 @@ int main()
 	clock_t start, end;
 	float elapsed_time;
 	start = clock();
-	read_disk_sector();
+	for(int x = 0; x< 10000; x++)
+		x = x;
 	end = clock();
 	elapsed_time = (float)(end - start) / (float)CLOCKS_PER_SEC;
 	printf("Elapsed time: %f seconds\n", elapsed_time);
