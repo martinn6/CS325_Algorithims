@@ -339,7 +339,7 @@ int main()
 	//close file
 	fclose(fileptr);
 	
-	/* random number generator for tests*/
+	/* random number generator for tests
 
 	int len = 1000;
 	int testArr[10][len];
@@ -366,13 +366,13 @@ int main()
 	elapsed_time = (float)(end - start) / (float)CLOCKS_PER_SEC;
 	printf("Elapsed time: %f seconds\n", elapsed_time);
 	
-	clock_t start_t, end_t, total_t;
+
 	for (int i = 0; i < 9; i++){
 
 		algoOneMaxSubarray(&line); 
 
 	}	
-   
+    */
 	 
 	//ask user for which algorithm to run
 	printf("Choose which algorithim to run:\n");
