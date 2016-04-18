@@ -202,28 +202,26 @@ int algoOneMaxSubarray(struct lines *line)
 int algoTwoMaxSubarray(struct lines *line)
 {
 	int sum;
-	for (int a = 0; a < line[0].noOfLines; a++)
+	
+	line[0].maxArraySum  = line[0].num[0]; // initialize maxSum
+	for(int i = 0; i < line[0].noOfnums; i++)
 	{
-		line[a].maxArraySum  = line[a].num[0]; // initialize maxSum
-		for(int i = 0; i < line[a].noOfnums; i++)
+		sum = 0; // initialize sume
+		for (int j = i; j < line[0].noOfnums; j++)
 		{
-			sum = 0; // initialize sume
-			for (int j = i; j < line[a].noOfnums; j++)
+			sum += line[0].num[j]; // add the values together
+			if(sum > line[0].maxArraySum)
 			{
-				sum += line[a].num[j]; // add the values together
-				if(sum > line[a].maxArraySum)
+				// if the value in sum is greater than maxSum, then replace maxSum with sum
+				line[0].maxArraySum = sum;
+				
+				//get the subarray
+				line[0].subArrayLength = 0;
+				for (int b = i; b <= j; b++)
 				{
-					// if the value in sum is greater than maxSum, then replace maxSum with sum
-					line[a].maxArraySum = sum;
-					
-					//get the subarray
-					line[a].subArrayLength = 0;
-					for (int b = i; b <= j; b++)
-					{
-						//int c = 0;
-						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
-						line[a].subArrayLength++;
-					}
+					//int c = 0;
+					line[0].subArray[line[0].subArrayLength] = line[0].num[b];
+					line[0].subArrayLength++;
 				}
 			}
 		}
