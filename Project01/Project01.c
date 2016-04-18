@@ -44,9 +44,10 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		
 	for (int i = 0; i < arrayLen; i++)
 	{
-		if(temp_sum + a[i] > temp_sum)
+		if(temp_sum + a[i] > sum)
 		{
 			temp_sum = temp_sum + a[i];
+			sum = temp_sum;
 			right = i;
 		}
 		else
@@ -56,10 +57,10 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 			left = i;
 		}
 		
-		if (temp_sum > sum)
-		{
-			sum = temp_sum;
-		}
+		// if (temp_sum > sum)
+		// {
+			// sum = temp_sum;
+		// }
 	}
 	
 	printf("left=%d ", left);
