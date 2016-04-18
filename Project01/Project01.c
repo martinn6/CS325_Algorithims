@@ -341,7 +341,7 @@ int main()
 	
 	/* random number generator for tests*/
 
-	int len = 100;
+	int len = 1000;
 	int testArr[10][len];
 	for(int i = 0; i < 10; i++) {
 		for (int j = 0; j < len; j++) {
