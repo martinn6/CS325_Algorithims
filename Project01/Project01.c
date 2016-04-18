@@ -268,6 +268,40 @@ int outputResults(struct lines *line)
 }
 
 
+int outputResultsToFile(struct lines *line)
+{
+	//Test Output
+	FILE *fp;
+	const char* outfilename;
+	outfilename = "MSS_Results.txt";
+	fp = fopen(filename, "w");
+	//printf("Results:\n\n");
+	for (int i = 0; i < line[0].noOfLines; i++)
+	{
+		fprintf("[");
+		for (int j = 0; j < line[i].noOfnums; j++)
+		{
+			fprintf("%i", line[i].num[j]);
+			if(j != line[i].noOfnums - 1)
+				fprintf(", ");
+		}
+		fprintf("]\n");
+		fprintf("[");
+		for (int j = 0; j < line[i].subArrayLength; j++)
+		{
+			fprintf("%i", line[i].subArray[j]);
+			if(j != line[i].subArrayLength - 1)
+				fprintf(", ");
+		}
+		fprintf("]\n");
+		fprintf("max sum = %d\n", line[i].maxArraySum);
+	}
+	//close file
+	fclose(fileptr);
+	return 0;
+}
+
+
 int main()
 {
 	//Declare Variables
@@ -327,6 +361,7 @@ int main()
 		//Run First Algorithim
 		algoOneMaxSubarray(&line);
 		outputResults(&line);
+		outputResultsToFile(&line);
 	}
 	else if (strcmp(userInput,"2") == 0)
 	{
