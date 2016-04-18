@@ -64,9 +64,9 @@ int algoFourLinearTime(int a[], int arrayLen)
 	printf("right=%d", right);
 	printf("max=%d", max);
 	return (0);
-	*/
+	
 } 
-
+*/
 
 
 int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int hi) 
