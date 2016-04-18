@@ -51,13 +51,17 @@ int algoFourLinearTime(int a[], int arrayLen)
 		}
 		else { 
 			temp_sum = 0;
-			left = i;
+			left = i+1;
 		}
 		if (temp_sum > sum)
 			sum = temp_sum;
 	}
 	printf("left = %d", left);
 	printf("right = %d", right);
+	printf("subArray = ");
+	for(int i = left; i < right; i++)
+		printf("%d, ", a[i]);
+	printf()
 	
 	return sum;
 }
