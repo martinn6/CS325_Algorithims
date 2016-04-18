@@ -339,7 +339,8 @@ int main()
 	{
 		//Run Test 4
 		printf("Algorithm 4: Linear-time");
-		algoFourLinearTime(line[0].num, line[0].noOfnums); 
+		int result = algoFourLinearTime(line[0].num, line[0].noOfnums); 
+		printf("result = %d", result);
 	}
 	else
 	{
