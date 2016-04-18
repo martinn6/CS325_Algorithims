@@ -287,6 +287,7 @@ int outputResultsToFile(struct lines *line)
 		fprintf(fp,"%s","]\n");
 		fprintf(fp,"%s %d %s","max sum = ", line[i].maxArraySum,"\n");
 	}
+	printf("Output results to file: %s", outfilename);
 	//close file
 	fclose(fp);
 	return 0;
@@ -340,30 +341,30 @@ int main()
 	
 	/* random number generator for tests*/
 
-	// int len = 100;
-	// int testArr[10][len];
-	// for(int i = 0; i < 10; i++) {
-		// for (int j = 0; j < len; j++) {
-			// testArr[i][j] = rand();
-		// }
-	// }
+	int len = 100;
+	int testArr[10][len];
+	for(int i = 0; i < 10; i++) {
+		for (int j = 0; j < len; j++) {
+			testArr[i][j] = rand();
+		}
+	}
 	
-	// for (int n = 0; n < 10; i++)
-	// {
-		// for (int i = 0; i < len; i++)
-		// {
-			// line[n].num[i] = testArr[n][i];
-		// }
-	// }
+	for (int n = 0; n < 10; i++)
+	{
+		for (int i = 0; i < len; i++)
+		{
+			line[n].num[i] = testArr[n][i];
+		}
+	}
 	
-	// clock_t start_t, end_t, total_t;
-	// for (int i = 0; i < 9; i++){
-		// start_t = clock();
-		// algoOneMaxSubarray(line[n], len);
-		// end_t = clock();
-		// total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
-		// printf("\ntotal time = %lu\n\n",total_t);
-	// }	
+	clock_t start_t, end_t, total_t;
+	for (int i = 0; i < 9; i++){
+		start_t = clock();
+		algoFourLinearTime(&line, line[0].num, line[0].noOfnums); 
+		end_t = clock();
+		total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
+		printf("\ntotal time = %lu\n\n",total_t);
+	}	
    
 	 
 	//ask user for which algorithm to run
