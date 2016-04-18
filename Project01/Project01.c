@@ -64,7 +64,7 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		line[0].subArray[n] = a[i];
 		n++;
 	}
-	line[0].subArrayLength
+	line[0].subArrayLength = n;
 	//set result in struct
 	line[0].maxArraySum = sum;
 	
