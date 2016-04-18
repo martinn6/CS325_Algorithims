@@ -43,10 +43,10 @@ int algoFourLinearTime(int a[], int arrayLen)
 			sum = sum + a[i];
 		else
 			sum = 0;
-		if (sum > ans)
-			ans = sum;
+		if (sum > finalSum)
+			finalSum = sum;
 	}
-	return ans;
+	return finalSum;
 }
 	
 	/*
