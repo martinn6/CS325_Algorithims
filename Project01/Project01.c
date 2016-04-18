@@ -239,7 +239,7 @@ int outputResults(struct lines *line)
 {
 	//Test Output
 	printf("Results:\n\n");
-	for (int i = 0; i < line[0].noOfLines; i++)
+	for (int i = 0; i <= line[0].noOfLines; i++)
 	{
 		printf("[");
 		for (int j = 0; j < line[i].noOfnums; j++)
