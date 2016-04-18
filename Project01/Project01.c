@@ -44,7 +44,7 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		
 	for (int i = 0; i < arrayLen; i++)
 	{
-		if(temp_sum + a[i] > 0)
+		if(temp_sum + a[i] > sum)
 		{
 			temp_sum = temp_sum + a[i];
 			right = i-1;
