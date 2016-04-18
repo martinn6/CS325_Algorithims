@@ -167,42 +167,34 @@ int algoOneMaxSubarray(struct lines *line)
 	int maxArrayLen;
 	int sum = 0; // holds the sum
 	int maxSum = 0; // holds the max sum of the subarray
-	clock_t start_t, end_t;
-	//int len = 0;
-	
-	
+
 	for(int a = 0; a < line[0].noOfLines; a++)
 	{
-		start_t = clock();
-		printf("t=%ld\n", start_t);
-		for(int i = 0; i < line[a].noOfnums; i++)
+		for(int i = 0; i < line[0].noOfnums; i++)
 		{
-			for(int j = i; j < line[a].noOfnums; j++) 
+			for(int j = i; j < line[0].noOfnums; j++) 
 			{
 				sum = 0; 
 				curArrayLen = 0; // reset the subarray length
 				for(cur = i; cur <= j; cur++) 
 				{
-					sum += line[a].num[cur]; // add the current element to the sum
+					sum += line[0].num[cur]; // add the current element to the sum
 					curArrayLen++; // increment the current subarray length
 				}
-				if(sum > line[a].maxArraySum) { // if the current sum is greater than the current max sum, replace it
-					line[a].maxArraySum = sum; // reset the max subarray sum
-					line[a].maxArrayLength = curArrayLen; // reset the max subarray length
+				if(sum > line[0].maxArraySum) { // if the current sum is greater than the current max sum, replace it
+					line[0].maxArraySum = sum; // reset the max subarray sum
+					line[0].maxArrayLength = curArrayLen; // reset the max subarray length
 					//copy substring to subArray
-					line[a].subArrayLength = 0;
+					line[0].subArrayLength = 0;
 					for (int b = i; b <= j; b++)
 					{
 						//int c = 0;
-						line[a].subArray[line[a].subArrayLength] = line[a].num[b];
-						line[a].subArrayLength++;
+						line[0].subArray[line[0].subArrayLength] = line[0].num[b];
+						line[0].subArrayLength++;
 					}
 				}
 			}
 		}
-		end_t = clock();
-		printf("t2=%ld\n",end_t);
-		line[a].time = (long double)(end_t-start_t)/(1.0*CLOCKS_PER_SEC);
 	}
 	return 0;
 } 
@@ -350,7 +342,7 @@ int main()
 	
 	/* random number generator for tests*/
 
-	// int len = 1000;
+	// int len = 100;
 	// int testArr[10][len];
 	// for(int i = 0; i < 10; i++) {
 		// for (int j = 0; j < len; j++) {
@@ -369,7 +361,7 @@ int main()
 	// clock_t start_t, end_t, total_t;
 	// for (int i = 0; i < 9; i++){
 		// start_t = clock();
-		// algoOneMaxSubarray(testArr[i], len);
+		// algoOneMaxSubarray(line[n], len);
 		// end_t = clock();
 		// total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
 		// printf("\ntotal time = %lu\n\n",total_t);
