@@ -341,7 +341,7 @@ int main()
 	{
 		//Run Test 4
 		line[0].noOfLines = 1;
-		int result = algoFourLinearTime(line[0].num, line[0].noOfnums); 
+		int result = algoFourLinearTime(&line, line[0].num, line[0].noOfnums); 
 		outputResults(&line);
 	}
 	else
