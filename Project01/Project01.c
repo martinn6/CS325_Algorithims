@@ -1,5 +1,6 @@
 /*********************************************************************************************
  * Developers: Nick Martin (martinn6)
+	Elizabeth 
 
  * Date: 20160403
  * Project: Project 01
@@ -18,12 +19,12 @@ This will take in an int array and output time.
 \***********************************************************************/
 
 struct lines {
-	int num[50];
-	int subArray[50];
-	int subArray2[50];
+	int num[1000];
+	int subArray[500];
+	int subArray2[500];
 	int subArrayLength;
 	int subArray2Length;
-	char words[100];
+	char words[1000];
 	int noOfLines;
 	int noOfnums;
 	int maxArraySum;
@@ -346,6 +347,39 @@ int main()
 	
 	//close file
 	fclose(fileptr);
+	
+	/* random number generator for tests*/
+
+	// int len = 1000;
+	// int testArr[10][len];
+	// for(int i = 0; i < 10; i++) {
+		// for (int j = 0; j < len; j++) {
+			// testArr[i][j] = rand();
+		// }
+	// }
+	
+	// for (int n = 0; n < 10; i++)
+	// {
+		// for (int i = 0; i < len; i++)
+		// {
+			// line[n].num[i] = testArr[n][i];
+		// }
+	// }
+	
+	// clock_t start_t, end_t, total_t;
+	// for (int i = 0; i < 9; i++){
+		// start_t = clock();
+		// algoOneMaxSubarray(testArr[i], len);
+		// end_t = clock();
+		// total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
+		// printf("\ntotal time = %lu\n\n",total_t);
+	// }	
+   
+   return 0;
+}
+	
+	
+	
 	 
 	//ask user for which algorithm to run
 	printf("Choose which algorithim to run:\n");
