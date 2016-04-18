@@ -47,24 +47,15 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		if(temp_sum + a[i] > sum)
 		{
 			temp_sum = temp_sum + a[i];
-			sum = temp_sum;
-			right = i;
+			right = i-1;
 		}
-		else
-		{
-			//reset and start at i
+		else { 
 			temp_sum = 0;
-			left = i;
+			left = i+1;
 		}
-		
-		// if (temp_sum > sum)
-		// {
-			// sum = temp_sum;
-		// }
+		if (temp_sum > sum)
+			sum = temp_sum;
 	}
-	
-	printf("left=%d ", left);
-	printf("right=%d ", right);
 
 	//copy subarray to struct
 	int n = 0;
@@ -73,7 +64,7 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		line[0].subArray[n] = a[i];
 		n++;
 	}
-	line[0].subArrayLength = n;
+	line[0].subArrayLength
 	//set result in struct
 	line[0].maxArraySum = sum;
 	
