@@ -56,27 +56,12 @@ int algoFourLinearTime(int a[], int arrayLen)
 		if (temp_sum > sum)
 			sum = temp_sum;
 	}
+	printf("left = %d", left);
+	printf("right = %d", right);
+	
 	return sum;
 }
-	
-	/*
-	int maxSum = 0;
-	for (int i = left; i < high; i++) {
-		maxSum = MAX(a[i], maxSum + a[i]);
-		if (maxSum > sum) {
-			sum = maxSum;
-			right = i;
-		}
-		if temp_sum == a[i]
-				left = i;
-	}
-	printf("left=%d", left);
-	printf("right=%d", right);
-	printf("max=%d", max);
-	return (0);
-	
-} 
-*/
+
 
 
 int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int hi) 
@@ -350,7 +335,7 @@ int main()
 		//Run Test 4
 		printf("Algorithm 4: Linear-time");
 		int result = algoFourLinearTime(line[0].num, line[0].noOfnums); 
-		printf("result = %d", result);
+		printf("\nresult = %d", result);
 	}
 	else
 	{
