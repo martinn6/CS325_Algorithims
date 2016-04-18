@@ -32,6 +32,42 @@ struct lines {
 };
 
 
+int algoFourLinearTime(int a[], int arrayLen)
+{
+	//need subarray sum SUM(A-b)
+	//store final in finalSum
+	int sum = 0, finalSum = 0;
+	for (int i = 0; i < arrayLen; i++)
+	{
+		if(sum + a[i] > 0)
+			sum = sum + a[i];
+		else
+			sum = 0;
+		if (sum > ans)
+			ans = sum;
+	}
+	return ans;
+}
+	
+	
+	int maxSum = 0;
+	for (int i = left; i < high; i++) {
+		maxSum = MAX(a[i], maxSum + a[i]);
+		if (maxSum > sum) {
+			sum = maxSum;
+			right = i;
+		}
+		if temp_sum == a[i]
+				left = i;
+	}
+	printf("left=%d", left);
+	printf("right=%d", right);
+	printf("max=%d", max);
+	return (0);
+} 
+
+
+
 int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int hi) 
 { 	//int a[], int lo, int hi
 	// base case: there's only one element present in the array
@@ -157,8 +193,6 @@ int algoOneMaxSubarray(struct lines *line)
 		printf("t2=%ld\n",end_t);
 		line[a].time = (long double)(end_t-start_t)/(1.0*CLOCKS_PER_SEC);
 	}
-	
-	
 	return 0;
 } 
 
@@ -304,6 +338,7 @@ int main()
 	{
 		//Run Test 4
 		printf("Algorithm 4: Linear-time");
+		algoFourLinearTime(line[0].num, line[0].noOfnums); 
 	}
 	else
 	{
