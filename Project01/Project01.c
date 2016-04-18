@@ -357,20 +357,19 @@ int main()
 		}
 	}
 	
-	double startTime, endTime, elapsedTime;
+	clock_t start, end;
+	float elapsed_time;
+	start = clock();
+	read_disk_sector();
+	end = clock();
+	elapsed_time = (float)(end - start) / (float)CLOCKS_PER_SEC;
+	printf("Elapsed time: %f seconds\n", elapsed_time);
 	
 	clock_t start_t, end_t, total_t;
 	for (int i = 0; i < 9; i++){
-		startTime = clock();
-		printf("Start time: %lf\n", start_t/CLOCKS_PER_SEC);
+
 		algoOneMaxSubarray(&line); 
-		endTime = clock();
-		printf("End time: %lf\n", end_t/CLOCKS_PER_SEC);
-		elapsedTime = endTime - startTime;
-		printf("Start time: %lf\n", startTime/CLOCKS_PER_SEC);
-		printf("End time: %lf\n", endTime/CLOCKS_PER_SEC);
-		printf("Time elapsed: %lf\n", elapsedTime/CLOCKS_PER_SEC);
-		printf("Clocks per sec: %ld\n", CLOCKS_PER_SEC);
+
 	}	
    
 	 
