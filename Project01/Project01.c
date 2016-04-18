@@ -56,16 +56,16 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 		if (temp_sum > sum)
 			sum = temp_sum;
 	}
-	printf("left = %d", left);
-	printf("right = %d", right);
-	printf("subArray = ");
+
+	//copy subarray to struct
 	int n = 0;
 	for(int i = left; i < right; i++)
 	{
 		line[0].subArray[n] = a[i];
-		printf("%d, ", a[i]);
 		n++;
 	}
+	
+	//set result in struct
 	line[0].maxArraySum = sum;
 	
 	return 0;
@@ -258,7 +258,6 @@ int outputResults(struct lines *line)
 		}
 		printf("]\n");
 		printf("max sum = %d\n", line[i].maxArraySum);
-		printf("No. of Rows: %d Time taken: %f\n\n", line[i].noOfnums, line[i].time);
 	}
 	return 0;
 }
