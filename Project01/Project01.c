@@ -49,8 +49,7 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 			temp_sum = temp_sum + a[i];
 			right = i;
 		}
-		
-		if(temp_sum + a[i] < 0)
+		else
 		{
 			//reset and start at i
 			temp_sum = 0;
