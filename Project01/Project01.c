@@ -360,7 +360,7 @@ int main()
 	clock_t start_t, end_t, total_t;
 	for (int i = 0; i < 9; i++){
 		start_t = clock();
-		algoFourLinearTime(&line, line[0].num, line[0].noOfnums); 
+		algoOneMaxSubarray(&line); 
 		end_t = clock();
 		//total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
 		total_t = ((double) (end_t - start_t))/1000000;
