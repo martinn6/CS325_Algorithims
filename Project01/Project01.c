@@ -34,19 +34,29 @@ struct lines {
 
 int algoFourLinearTime(int a[], int arrayLen)
 {
+	//need position of array (a-b)
 	//need subarray sum SUM(A-b)
 	//store final in finalSum
-	int sum = 0, finalSum = 0;
+	int temp_sum = 0, 
+		sum = 0,
+		left = 0, 
+		right = 0;
+		
 	for (int i = 0; i < arrayLen; i++)
 	{
-		if(sum + a[i] > 0)
-			sum = sum + a[i];
-		else
-			sum = 0;
-		if (sum > finalSum)
-			finalSum = sum;
+		if(temp_sum + a[i] > 0)
+		{
+			temp_sum = temp_sum + a[i];
+			right = i;
+		}
+		else { 
+			temp_sum = 0;
+			left = i;
+		}
+		if (temp_sum > sum)
+			sum = temp_sum;
 	}
-	return finalSum;
+	return sum;
 }
 	
 	/*
