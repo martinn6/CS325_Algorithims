@@ -368,12 +368,14 @@ int main()
 		//Run Test 2
 		algoTwoMaxSubarray(&line);
 		outputResults(&line);
+		outputResultsToFile(&line);
 	}
 	else if (strcmp(userInput,"3") == 0)
 	{
 		int a = 0;
 		algoThreeMaxSubArray(&line, a, line[a].num, 0, line[a].noOfnums); //struct, lineNum, numArray, lo, hi
 		outputResults(&line);
+		outputResultsToFile(&line);
 	}
 	else if (strcmp(userInput,"4") == 0)
 	{
@@ -381,6 +383,7 @@ int main()
 		line[0].noOfLines = 1;
 		int result = algoFourLinearTime(&line, line[0].num, line[0].noOfnums); 
 		outputResults(&line);
+		outputResultsToFile(&line);
 	}
 	else
 	{
