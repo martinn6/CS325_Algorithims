@@ -360,7 +360,7 @@ int main()
 	clock_t start, end;
 	float elapsed_time;
 	start = clock();
-	for(int x = 0; x< 10000; x++)
+	for(int x = 0; x< 100000; x++)
 		x = x;
 	end = clock();
 	elapsed_time = (float)(end - start) / (float)CLOCKS_PER_SEC;
