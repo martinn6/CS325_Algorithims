@@ -32,7 +32,7 @@ struct lines {
 };
 
 
-int algoFourLinearTime(int a[], int arrayLen)
+int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 {
 	//need position of array (a-b)
 	//need subarray sum SUM(A-b)
@@ -59,10 +59,14 @@ int algoFourLinearTime(int a[], int arrayLen)
 	printf("left = %d", left);
 	printf("right = %d", right);
 	printf("subArray = ");
+	int n = 0;
 	for(int i = left; i < right; i++)
+		line[0].subArray[n] = a[i];
 		printf("%d, ", a[i]);
+		n++;
+	line[0].maxArraySum = sum;
 	
-	return sum;
+	return 0;
 }
 
 
@@ -336,9 +340,9 @@ int main()
 	else if (strcmp(userInput,"4") == 0)
 	{
 		//Run Test 4
-		printf("Algorithm 4: Linear-time");
+		line[0].noOfLines = 1;
 		int result = algoFourLinearTime(line[0].num, line[0].noOfnums); 
-		printf("\nresult = %d", result);
+		outputResults(&line);
 	}
 	else
 	{
