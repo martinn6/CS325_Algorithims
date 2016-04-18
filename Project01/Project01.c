@@ -357,12 +357,14 @@ int main()
 		}
 	}
 	
+	double startTime, endTime, elapsedTime;
+	
 	clock_t start_t, end_t, total_t;
 	for (int i = 0; i < 9; i++){
-		start_t = clock();
+		startTime = clock();
 		printf("Start time: %lf\n", start_t/CLOCKS_PER_SEC);
 		algoOneMaxSubarray(&line); 
-		end_t = clock();
+		endTime = clock();
 		printf("End time: %lf\n", end_t/CLOCKS_PER_SEC);
 		total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
 		printf("\ntotal time = %lu\n\n",total_t);
