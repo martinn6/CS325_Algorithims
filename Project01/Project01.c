@@ -366,8 +366,11 @@ int main()
 		algoOneMaxSubarray(&line); 
 		endTime = clock();
 		printf("End time: %lf\n", end_t/CLOCKS_PER_SEC);
-		total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
-		printf("\ntotal time = %lu\n\n",total_t);
+		elapsedTime = endTime - startTime;
+		printf("Start time: %lf\n", startTime/CLOCKS_PER_SEC);
+		printf("End time: %lf\n", endTime/CLOCKS_PER_SEC);
+		printf("Time elapsed: %lf\n", elapsedTime/CLOCKS_PER_SEC);
+		printf("Clocks per sec: %ld\n", CLOCKS_PER_SEC);
 	}	
    
 	 
