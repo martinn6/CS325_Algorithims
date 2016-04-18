@@ -148,6 +148,7 @@ int algoThreeMaxSubArray(struct lines *line, int lineNum, int a[], int lo, int h
 		
 	}
 	printf("combinedMax=%d\n", combinedMax);
+	line[0].maxArraySum = combinedMax;
 	printf("linenum=%d\n",line[lineNum].subArray[0]);
 	
 	// printf("subArrayFirst = ");
