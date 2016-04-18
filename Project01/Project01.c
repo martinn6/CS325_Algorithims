@@ -297,7 +297,7 @@ int outputResultsToFile(struct lines *line)
 		fprintf("max sum = %d\n", line[i].maxArraySum);
 	}
 	//close file
-	fclose(fileptr);
+	fclose(fp);
 	return 0;
 }
 
