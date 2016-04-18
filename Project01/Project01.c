@@ -317,7 +317,7 @@ int main()
 		{
 			//printf("%s", buffer); //test buffer
 			strncpy(line[line[0].noOfLines].words, buffer, 99);
-			line[0].noOfLines++;
+			line[0].noOfLines=1;
 		}
 	}
 	
