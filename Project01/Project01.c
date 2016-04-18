@@ -375,11 +375,6 @@ int main()
 		// printf("\ntotal time = %lu\n\n",total_t);
 	// }	
    
-   return 0;
-}
-	
-	
-	
 	 
 	//ask user for which algorithm to run
 	printf("Choose which algorithim to run:\n");
