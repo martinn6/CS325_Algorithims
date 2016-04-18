@@ -360,10 +360,11 @@ int main()
 	clock_t start_t, end_t, total_t;
 	for (int i = 0; i < 9; i++){
 		start_t = clock();
+		printf("start=%ld", start_t);
 		algoOneMaxSubarray(&line); 
 		end_t = clock();
-		//total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
-		total_t = ((double) (end_t - start_t))/1000000;
+		printf("end=%ld", end_t);
+		total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
 		printf("\ntotal time = %lu\n\n",total_t);
 	}	
    
