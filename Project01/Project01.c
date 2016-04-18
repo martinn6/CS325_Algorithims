@@ -49,7 +49,7 @@ int algoFourLinearTime(int a[], int arrayLen)
 	return ans;
 }
 	
-	
+	/*
 	int maxSum = 0;
 	for (int i = left; i < high; i++) {
 		maxSum = MAX(a[i], maxSum + a[i]);
@@ -64,6 +64,7 @@ int algoFourLinearTime(int a[], int arrayLen)
 	printf("right=%d", right);
 	printf("max=%d", max);
 	return (0);
+	*/
 } 
 
 
