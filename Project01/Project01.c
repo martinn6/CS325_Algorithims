@@ -59,8 +59,8 @@ int algoFourLinearTime(struct lines *line, int a[], int arrayLen)
 			right = i+1;
 		}
 	}
-	printf("left = %d", left);
-	printf("right = %d\n", right);
+	// printf("left = %d", left);
+	// printf("right = %d\n", right);
 
 	//copy subarray to struct
 	int n = 0;
@@ -362,7 +362,8 @@ int main()
 		start_t = clock();
 		algoFourLinearTime(&line, line[0].num, line[0].noOfnums); 
 		end_t = clock();
-		total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
+		//total_t = ((double) (end_t - start_t))/CLOCKS_PER_SEC;
+		total_t = ((double) (end_t - start_t))/1000000;
 		printf("\ntotal time = %lu\n\n",total_t);
 	}	
    
