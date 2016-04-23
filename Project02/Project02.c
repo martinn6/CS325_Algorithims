@@ -131,12 +131,12 @@ int main()
 				strncpy(numLine, line, strlen(line));
 				n++;
 			}
-			if (n == 1)
-			{
-				valueLine = (char *) realloc (valueLine, strlen(line)+1);
-				strncpy(valueLine, line, strlen(line));
-				n++;
-			}
+			// if (n == 1)
+			// {
+				// valueLine = (char *) realloc (valueLine, strlen(line)+1);
+				// strncpy(valueLine, line, strlen(line));
+				// n++;
+			// }
 		}
     }
  
