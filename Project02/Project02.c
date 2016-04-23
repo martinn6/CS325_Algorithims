@@ -131,7 +131,7 @@ int main()
 				strncpy(numLine, line, strlen(line));
 				*p = strchr(numLine, '\n'); // p will point to the newline in filename
 				if(p) *p = 0; // if p is not null, terminate filename at p
-				n++;
+				
 			}
 			if (n == 2)
 			{
@@ -139,10 +139,8 @@ int main()
 				printf("strlen=%d\n",strlen(line));
 				valueLine = (char *) realloc (valueLine, strlen(line)+1);
 				// strncpy(valueLine, line, strlen(line));
-				n++;
 			}
-			printf("n=%d\n", n);
-			printf("strlen=%d\n",strlen(line));
+			n++;
 		}
     }
  
