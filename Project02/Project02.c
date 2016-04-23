@@ -102,7 +102,7 @@ int randNum(int *v, int a, int maxNumOfCoins, int maxValue)
 	//fill coins
 	for(int x = 0; x < maxNumOfCoins; x++)
 	{
-		v[x] = rand() % maxValue + 1
+		v[x] = rand() % maxValue + 1;
 	}
 	
 	for(int x = 0; x < maxNumOfCoins; x++)
