@@ -98,7 +98,9 @@ int main()
 	FILE *fp;
 	char filename[99];
 	char numLine[99];
+	char valueLine[99];
 	char buffer[100];
+	int line = 0;
 	
 	printf("Enter filename: ");
 	fgets(filename, 99, stdin);
@@ -114,11 +116,17 @@ int main()
 		printf("opening file: %s...\n", filename);
 		while(fgets(buffer,99,fp) != NULL)
 		{
-			strncpy(numLine, buffer, 99);
+			if(line == 0)
+			{
+				strncpy(numLine, buffer, 99);
+			}
+			if(line == 1)
+				strncpy(valueLine, buffer, 99);
 		}
 	}
  
-	printf("numLine=%s", numLine);
+	printf("numLine=%s\n", numLine);
+	printf("valueLine=%s\n", valueLine);
 
  
 	/*
