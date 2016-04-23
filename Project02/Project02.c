@@ -106,7 +106,7 @@ int main()
 	
 	fp = fopen(filename, "r");
 	
-	if(!file)
+	if(!fp)
 		perror("File not found.");
 	else
 		printf("file found.");
@@ -147,7 +147,7 @@ int main()
 	}
 	*/
 	//close file
-	fclose(fileptr);
+	fclose(fp);
 	
 	/* random number generator for tests
 
