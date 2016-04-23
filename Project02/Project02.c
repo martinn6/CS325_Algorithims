@@ -129,6 +129,8 @@ int main()
 			{
 				numLine = (char *) realloc (numLine, strlen(line)+1);
 				strncpy(numLine, line, strlen(line));
+				*p = strchr(numLine, '\n'); // p will point to the newline in filename
+				if(p) *p = 0; // if p is not null, terminate filename at p
 				n++;
 			}
 			if (n == 1)
