@@ -107,7 +107,7 @@ int main()
     ssize_t read;
 	char filename[99];
 	char *numLine;
-	char valueLine[99];
+	char *valueLine;
 	char buffer[100];
 	int n = 0;
 
@@ -129,7 +129,13 @@ int main()
 			{
 				numLine = (char *) realloc (numLine, strlen(line));
 				strncpy(numLine, line, strlen(line));
-				printf("line=%s, len=%d, read=%d\n", line, len, read);
+				n++;
+			}
+			if (n == 1)
+			{
+				valueLine = (char *) realloc (valueLine, strlen(line));
+				strncpy(valueLine, line, strlen(line));
+				n++;
 			}
 		}
     }
