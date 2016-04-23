@@ -133,8 +133,9 @@ int main()
 			}
 			if (n == 1)
 			{
-				printf("n=1");
-				valueLine = (char *) realloc (valueLine, strlen(line)+1);
+				printf("n=1\n");
+				printf("strlen=%d\n",strlen(line));
+				//valueLine = (char *) realloc (valueLine, strlen(line)+1);
 				// strncpy(valueLine, line, strlen(line));
 				n++;
 			}
