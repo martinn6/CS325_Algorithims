@@ -128,6 +128,7 @@ int main()
 			if (n == 0)
 			{
 				numLine = (char *) realloc (numLine, strlen(line));
+				strncpy(numLine, line, strlen(line));
 				printf("line=%s, len=%d, read=%d\n", line, len, read);
 			}
 		}
