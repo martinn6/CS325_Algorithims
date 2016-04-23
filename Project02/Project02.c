@@ -97,7 +97,7 @@ int outputResultsToFile(struct lines *line)
 	return 0;
 }
 
-int randNum(int *v, int a, int maxNumOfCoins, int maxValue)
+int randomNum(int *v, int a, int maxNumOfCoins, int maxValue)
 {
 	//fill coins
 	for(int x = 0; x < maxNumOfCoins; x++)
