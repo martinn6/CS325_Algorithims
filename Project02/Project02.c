@@ -136,7 +136,7 @@ int main()
 				printf("n=1");
 				// valueLine = (char *) realloc (valueLine, strlen(line)+1);
 				// strncpy(valueLine, line, strlen(line));
-				// n++;
+				n++;
 			}
 		}
     }
