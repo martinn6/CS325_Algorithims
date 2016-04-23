@@ -97,7 +97,8 @@ int main()
 	//Declare Variables
 	FILE *fp;
 	char filename[99];
-	
+	char numLine[99];
+	char buffer[100];
 	
 	printf("Enter filename: ");
 	fgets(filename, 99, stdin);
@@ -107,29 +108,20 @@ int main()
 	fp = fopen(filename, "r");
 	
 	if(!fp)
-		perror("File not found.");
+		perror("File not found");
 	else
-		printf("file found.");
-	
-	//Load lines into line[n].words
-	/*
-	line[0].noOfLines = 0;
-	char buffer[100];
-	filename = "MSS_Problems.txt";
-	printf("opening file: %s...\n", filename);
-	fileptr = fopen(filename, "r");
-	if(fileptr == NULL)
-		perror("error opening file");
-	else {
-		printf ("File Opened. Retreving Data.\n");
+	{
+		printf("opening file: %s...\n", filename);
 		while(fgets(buffer,99,fileptr) != NULL)
 		{
-			//printf("%s", buffer); //test buffer
-			strncpy(line[line[0].noOfLines].words, buffer, 99);
-			line[0].noOfLines=1;
+			strncpy(numLine, buffer, 99);
 		}
 	}
-	
+ 
+	printf("numLine=%s", numLine);
+
+ 
+	/*
     //parse numbers from lines into array
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
