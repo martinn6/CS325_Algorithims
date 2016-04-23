@@ -125,7 +125,7 @@ int main()
 	{
 		printf("opening file: %s...\n", filename);
 		while ((read = getline(&line, &len, fp)) != -1) {
-			if (n == 0)
+			if (n == 1)
 			{
 				numLine = (char *) realloc (numLine, strlen(line)+1);
 				strncpy(numLine, line, strlen(line));
@@ -133,11 +133,11 @@ int main()
 				if(p) *p = 0; // if p is not null, terminate filename at p
 				n++;
 			}
-			if (n == 1)
+			if (n == 2)
 			{
-				printf("n=1\n");
+				printf("n=2\n");
 				printf("strlen=%d\n",strlen(line));
-				//valueLine = (char *) realloc (valueLine, strlen(line)+1);
+				valueLine = (char *) realloc (valueLine, strlen(line)+1);
 				// strncpy(valueLine, line, strlen(line));
 				n++;
 			}
