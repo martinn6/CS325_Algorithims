@@ -127,13 +127,13 @@ int main()
 		while ((read = getline(&line, &len, fp)) != -1) {
 			if (n == 0)
 			{
-				numLine = (char *) realloc (numLine, strlen(line));
+				numLine = (char *) realloc (numLine, strlen(line)+1);
 				strncpy(numLine, line, strlen(line));
 				n++;
 			}
 			if (n == 1)
 			{
-				valueLine = (char *) realloc (valueLine, strlen(line));
+				valueLine = (char *) realloc (valueLine, strlen(line)+1);
 				strncpy(valueLine, line, strlen(line));
 				n++;
 			}
