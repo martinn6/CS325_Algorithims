@@ -106,7 +106,7 @@ int main()
     size_t len = 0;
     ssize_t read;
 	char filename[99];
-	char numLine[99];
+	char *numLine;
 	char valueLine[99];
 	char buffer[100];
 	int n = 0;
