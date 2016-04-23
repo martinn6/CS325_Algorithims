@@ -95,7 +95,7 @@ int outputResultsToFile(struct lines *line)
 int main()
 {
 	//Declare Variables
-	FILE *fileptr;
+	FILE *fp;
 	char filename[99];
 	
 	
@@ -104,7 +104,8 @@ int main()
 	char *p = strchr(filename, '\n'); // p will point to the newline in filename
 	if(p) *p = 0; // if p is not null, terminate filename at p
 	
-	fp = fopen(filename, "r")
+	fp = fopen(filename, "r");
+	
 	if(!file)
 		perror("File not found.");
 	else
