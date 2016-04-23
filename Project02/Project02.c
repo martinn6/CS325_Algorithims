@@ -28,6 +28,7 @@ int Greedy(int v[], int c[], int a, int m)
 int outputResults(struct lines *line)
 {
 	//Test Output
+	/*
 	printf("Results:\n\n");
 	for (int i = 0; i < line[0].noOfLines; i++)
 	{
@@ -49,6 +50,7 @@ int outputResults(struct lines *line)
 		printf("]\n");
 		printf("max sum = %d\n", line[i].maxArraySum);
 	}
+	*/
 	return 0;
 }
 
