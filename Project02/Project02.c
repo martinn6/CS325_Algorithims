@@ -121,9 +121,9 @@ int main()
 		 if( fgets (numLine, 1024, fp)!=NULL ) 
 			/* writing content to stdout */
 			puts(numLine);
-   }
+	}
 
-    }
+
  
 	printf("numLine=%s\n", numLine);
 	printf("valueLine=%s\n", valueLine);
