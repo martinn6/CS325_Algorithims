@@ -121,6 +121,7 @@ int main()
     ssize_t read;
 	char filename[99];
 	char *numLine;
+	char *userInput;
 	char *valueLine;
 	char buffer[100];
 	int n = 0;
