@@ -97,6 +97,20 @@ int outputResultsToFile(struct lines *line)
 	return 0;
 }
 
+int randNum(int *v, int a, int maxNumOfCoins, int maxValue)
+{
+	//fill coins
+	for(int x = 0; x < maxNumOfCoins; x++)
+	{
+		v[x] = rand() % maxValue + 1
+	}
+	
+	for(int x = 0; x < maxNumOfCoins; x++)
+	{
+		printf("v[%d]=%d",x,v[x]);
+	}
+}
+
 
 int main()
 {
@@ -110,7 +124,29 @@ int main()
 	char *valueLine;
 	char buffer[100];
 	int n = 0;
+	int maxValue = 1000;
+	int maxNumOfCoins = 10;
+	int v[maxNumOfCoins];
+	int c[maxNumOfCoins];
+	int a;	//start value
 
+	//ask user for file or random generator
+	printf("What do you want to run:\n");
+	printf("1) Load from File\n");
+	printf("2) Random Generator\n");
+	
+	scanf ("%[^\n]%*c", userInput);
+	
+	if (strcmp(userInput,"1") == 0)
+	{
+		//Run LoadFile
+	}
+	else if (strcmp(userInput,"2") == 0)
+	{
+		//Run Random Generator\n
+		randomNum(&v, a, maxNumOfCoins,  maxValue);
+		
+	}
 	
 	printf("Enter filename: ");
 	fgets(filename, 99, stdin);
