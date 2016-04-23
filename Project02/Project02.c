@@ -118,7 +118,7 @@ int main()
 	{
 		printf("opening file: %s...\n", filename);
 		while ((read = getline(&line, &len, fp)) != -1) {
-			printf("line=%s, len=%d", line, len);
+			printf("line=%s, len=%d, read=%d", line, len, read);
 		}
     }
  
