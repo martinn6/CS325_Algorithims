@@ -24,12 +24,6 @@ int Greedy(int v[], int c[], int a, int m)
 	return 0;
 }
 
-size_t strlen(const char *str)
-{
-    const char *s;
-    for (s = str; *s; ++s);
-    return(s - str);
-}
 
 int outputResults(struct lines *line)
 {
@@ -124,24 +118,11 @@ int main()
 	else
 	{
 		printf("opening file: %s...\n", filename);
-		while ((read = getline(&line, &len, fp)) != -1) {
-			if (n == 0)
-			{
-				numLine = (char *) realloc (numLine, strlen(line)+1);
-				strncpy(numLine, line, strlen(line));
-				*p = strchr(numLine, '\n'); // p will point to the newline in filename
-				if(p) *p = 0; // if p is not null, terminate filename at p
-				n++;
-			}
-			if (n == 1)
-			{
-				printf("n=1\n");
-				printf("strlen=%d\n",strlen(line));
-				//valueLine = (char *) realloc (valueLine, strlen(line)+1);
-				// strncpy(valueLine, line, strlen(line));
-				n++;
-			}
-		}
+		 if( fgets (numLine, 1024, fp)!=NULL ) 
+			/* writing content to stdout */
+			puts(numLine);
+   }
+
     }
  
 	printf("numLine=%s\n", numLine);
