@@ -103,7 +103,7 @@ int main()
 	char numLine[99];
 	char valueLine[99];
 	char buffer[100];
-	int line = 0;
+
 	
 	printf("Enter filename: ");
 	fgets(filename, 99, stdin);
