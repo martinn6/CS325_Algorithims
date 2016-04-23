@@ -112,7 +112,7 @@ int main()
 	else
 	{
 		printf("opening file: %s...\n", filename);
-		while(fgets(buffer,99,fileptr) != NULL)
+		while(fgets(buffer,99,fp) != NULL)
 		{
 			strncpy(numLine, buffer, 99);
 		}
