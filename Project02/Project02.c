@@ -24,6 +24,12 @@ int Greedy(int v[], int c[], int a, int m)
 	return 0;
 }
 
+size_t strlen(const char *str)
+{
+    const char *s;
+    for (s = str; *s; ++s);
+    return(s - str);
+}
 
 int outputResults(struct lines *line)
 {
@@ -103,6 +109,7 @@ int main()
 	char numLine[99];
 	char valueLine[99];
 	char buffer[100];
+	int n = 0;
 
 	
 	printf("Enter filename: ");
@@ -118,7 +125,11 @@ int main()
 	{
 		printf("opening file: %s...\n", filename);
 		while ((read = getline(&line, &len, fp)) != -1) {
-			printf("line=%s, len=%d, read=%d\n", line, len, read);
+			if (n == 0)
+			{
+				numLine = (char *) realloc (numLine, strlen(line));
+				printf("line=%s, len=%d, read=%d\n", line, len, read);
+			}
 		}
     }
  
