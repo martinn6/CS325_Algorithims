@@ -96,6 +96,9 @@ int main()
 {
 	//Declare Variables
 	FILE *fp;
+	char *line = NULL;
+    size_t len = 0;
+    ssize_t read;
 	char filename[99];
 	char numLine[99];
 	char valueLine[99];
@@ -114,16 +117,10 @@ int main()
 	else
 	{
 		printf("opening file: %s...\n", filename);
-		while(fgets(buffer,99,fp) != NULL)
-		{
-			if(line == 0)
-			{
-				strncpy(numLine, buffer, 99);
-			}
-			if(line == 1)
-				strncpy(valueLine, buffer, 99);
+		while ((read = getline(&line, &len, fp)) != -1) {
+			printf("line=%s, len=%d", line, len);
 		}
-	}
+    }
  
 	printf("numLine=%s\n", numLine);
 	printf("valueLine=%s\n", valueLine);
