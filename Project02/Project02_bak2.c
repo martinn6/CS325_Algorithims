@@ -76,7 +76,7 @@ int runGreedyAlgorithm(int v[], int a, int *c, int *m, int length)
 		
 	while(value > 0 && (length - n) >= 0)
 	{
-		//slowDown();	//slowing down the function so I can track its time.
+		slowDown();	//slowing down the function so I can track its time.
 		tempValue = value - v[length-n];
 		if (tempValue >= 0)
 		{		
@@ -188,20 +188,34 @@ int main()
 		randomNum(&v, &a, maxNumOfCoins, maxCoinValue, maxValue);
 	}
 	
-	//start = clock();
-	runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
-	//end = clock();
-	//elapsed_time = (float)(end - start) / (1.0*CLOCKS_PER_SEC);
-	printf("%d\n", a);
-	//fprintf(fp,"%d %s %f %s",a, "\t", elapsed_time ,"\n");
-	printf("\nmaxNumOfCoins=%d\n", maxNumOfCoins);
-	printf("maxCoinValue=%d\n", maxCoinValue);
-	printf("maxValue=%d\n", maxValue);
-	outputResults(v, maxNumOfCoins, a, 'V');
-	//printf("Elapsed time: %f seconds\n", elapsed_time);
-	printf("\nResults:\n");
-	outputResults(c, maxNumOfCoins, m, 'C');
+	//run Greedy
+	v[0] = 1;
+	v[1] = 5;
+	v[2] = 10;
+	v[3] = 25;
+	v[4] = 50;
+
+
 	
+	const char* outfilename;
+	outfilename = "vt2Results.txt";
+	fp = fopen(outfilename, "w");
+	for (a = 2000; a <= 2200; a++)
+	{
+		start = clock();
+		runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
+		end = clock();
+		elapsed_time = (float)(end - start) / (1.0*CLOCKS_PER_SEC);
+		printf("%d\n", a);
+		fprintf(fp,"%d %s %f %s",a, "\t", elapsed_time ,"\n");
+		//printf("\nmaxNumOfCoins=%d\n", maxNumOfCoins);
+		//printf("maxCoinValue=%d\n", maxCoinValue);
+		//printf("maxValue=%d\n", maxValue);
+		//outputResults(v, maxNumOfCoins, a, 'V');
+		//printf("Elapsed time: %f seconds\n", elapsed_time);
+		//printf("\nResults:\n");
+		//outputResults(c, maxNumOfCoins, m, 'C');
+	}
 	// printf("Enter filename: ");
 	// fgets(filename, 99, stdin);
 	// char *p = strchr(filename, '\n'); // p will point to the newline in filename

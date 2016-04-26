@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git pull
+#git pull
 make
 project02
 

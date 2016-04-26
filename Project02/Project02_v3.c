@@ -155,7 +155,7 @@ int main()
 
 	//For random generation
 	int maxValue = 10000;
-	int maxNumOfCoins = 5;
+	int maxNumOfCoins = 15;
 	int maxCoinValue = 50;
 	
 	//regular variables
@@ -188,20 +188,43 @@ int main()
 		randomNum(&v, &a, maxNumOfCoins, maxCoinValue, maxValue);
 	}
 	
-	//start = clock();
-	runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
-	//end = clock();
-	//elapsed_time = (float)(end - start) / (1.0*CLOCKS_PER_SEC);
-	printf("%d\n", a);
-	//fprintf(fp,"%d %s %f %s",a, "\t", elapsed_time ,"\n");
-	printf("\nmaxNumOfCoins=%d\n", maxNumOfCoins);
-	printf("maxCoinValue=%d\n", maxCoinValue);
-	printf("maxValue=%d\n", maxValue);
-	outputResults(v, maxNumOfCoins, a, 'V');
-	//printf("Elapsed time: %f seconds\n", elapsed_time);
-	printf("\nResults:\n");
-	outputResults(c, maxNumOfCoins, m, 'C');
+	//run Greedy
+	v[0] = 1;
+	v[1] = 2;
+	v[2] = 4;
+	v[3] = 6;
+	v[4] = 8;
+	v[5] = 10;
+	v[6] = 12;
+	v[7] = 16;
+	v[8] = 18;
+	v[9] = 20;
+	v[10] = 22;
+	v[11] = 24;
+	v[12] = 26;
+	v[13] = 28;
+	v[14] = 30;
+
 	
+	const char* outfilename;
+	outfilename = "v3Results.txt";
+	fp = fopen(outfilename, "w");
+	for (a = 2000; a <= 2200; a++)
+	{
+		start = clock();
+		runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
+		end = clock();
+		elapsed_time = (float)(end - start) / (1.0*CLOCKS_PER_SEC);
+		printf("%d\n", a);
+		fprintf(fp,"%d %s %d %s",a, "\t", m ,"\n");
+		//printf("\nmaxNumOfCoins=%d\n", maxNumOfCoins);
+		//printf("maxCoinValue=%d\n", maxCoinValue);
+		//printf("maxValue=%d\n", maxValue);
+		//outputResults(v, maxNumOfCoins, a, 'V');
+		//printf("Elapsed time: %f seconds\n", elapsed_time);
+		//printf("\nResults:\n");
+		//outputResults(c, maxNumOfCoins, m, 'C');
+	}
 	// printf("Enter filename: ");
 	// fgets(filename, 99, stdin);
 	// char *p = strchr(filename, '\n'); // p will point to the newline in filename

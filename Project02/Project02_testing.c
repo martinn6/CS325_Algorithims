@@ -76,7 +76,7 @@ int runGreedyAlgorithm(int v[], int a, int *c, int *m, int length)
 		
 	while(value > 0 && (length - n) >= 0)
 	{
-		//slowDown();	//slowing down the function so I can track its time.
+		slowDown();	//slowing down the function so I can track its time.
 		tempValue = value - v[length-n];
 		if (tempValue >= 0)
 		{		
@@ -198,7 +198,7 @@ int main()
 	printf("maxCoinValue=%d\n", maxCoinValue);
 	printf("maxValue=%d\n", maxValue);
 	outputResults(v, maxNumOfCoins, a, 'V');
-	//printf("Elapsed time: %f seconds\n", elapsed_time);
+	printf("Elapsed time: %f seconds\n", elapsed_time);
 	printf("\nResults:\n");
 	outputResults(c, maxNumOfCoins, m, 'C');
 	
