@@ -54,7 +54,9 @@ int randomNum(int *v, int *a, int maxNumOfCoins, int maxCoinValue, int maxValue)
             }
         }
     }
-	
+	printf("\nmaxNumOfCoins=%d\n", maxNumOfCoins);
+	printf("maxCoinValue=%d\n", maxCoinValue);
+	printf("maxValue=%d\n", maxValue);
 	return(0);
 }
 
@@ -135,20 +137,104 @@ int outputResults(int c[], int length, int m, char arrayName)
 	return 0;
 }
 
+/**********************************************************
+Name: printResults()
+Description: outputs the results to screen in the format:
+	[ArrayName] = [n0, n1, ... n[Array.Length]]
+**********************************************************/
+int printResults(int c[], int length, int m, char arrayName, char filename[])
+{
+	int p;
+	FILE *fp;
+	char outfilename[99];
+	char *pch;
+		
+	strcpy(outfilename, filename);
+	pch=strchr(outfilename,'.');
+	p = pch-outfilename;
+	if(p)
+	{
+		outfilename[p]='c';
+		outfilename[p+1]='h';
+		outfilename[p+2]='a';
+		outfilename[p+3]='n';
+		outfilename[p+4]='g';
+		outfilename[p+5]='e';
+		outfilename[p+6]='.';
+		outfilename[p+7]='t';
+		outfilename[p+8]='x';
+		outfilename[p+9]='t';
+		outfilename[p+10]='\0';
+	}
+	else
+	{
+		p = 0;
+		outfilename[p]='c';
+		outfilename[p+1]='h';
+		outfilename[p+2]='a';
+		outfilename[p+3]='n';
+		outfilename[p+4]='g';
+		outfilename[p+5]='e';
+		outfilename[p+6]='.';
+		outfilename[p+7]='t';
+		outfilename[p+8]='x';
+		outfilename[p+9]='t';
+		outfilename[p+10]='\0';
+	}
+
+	printf("outfilename=%s\n", outfilename);
+	fp = fopen(outfilename, "w");
+	fprintf(fp, "%c", arrayName);
+	fprintf(fp, "%s","=[");
+	for (int x = 0; x < length; x++)
+	{
+		fprintf(fp, "%d", c[x]);
+		if(x != length-1)
+			fprintf(fp, "%s", ", ");
+	}
+	fprintf(fp, "%s", "]\n");
+	fprintf(fp, "%d %s",m, "\n");
+	fclose(fp);
+	return 0;
+}
+
+/**********************************************************
+Name: parseNumLine()
+Description: outputs the results to a file in the format:
+	[ArrayName] = [n0, n1, ... n[Array.Length]]
+**********************************************************/
+int parseNumLine(char numLine[1024], int *v, int *maxNumOfCoins)
+{
+	int x = 0;
+	
+	//parse numbers from lines into array
+	char *pt;
+	pt = strtok(numLine,",");
+	while (pt != NULL) {
+		if (pt[0] == '[')
+			pt[0] = ' ';
+		v[x] = atoi(pt);
+		pt = strtok (NULL, ",");
+		x++;
+	}
+	*maxNumOfCoins = x;
+	return(0);
+}
+
 
 int main()
 {
 	srand(time(NULL));
 	//Declare Variables
 	FILE *fp;
-	char *line = NULL;
+	char *line;
     size_t len = 0;
     ssize_t read;
 	char filename[99];
-	char *numLine;
+	char numLine[1024];
+	char valueLine[1024];
 	char *userInput = (char*) malloc(100);
-	char *valueLine;
-	char buffer[100];
+	int value;
 	int n = 0;
 	clock_t start, end;
 	float elapsed_time;
@@ -181,82 +267,65 @@ int main()
 	if (strcmp(userInput,"1") == 0)
 	{
 		//Run LoadFile
+		printf("Enter filename: ");
+		fgets(filename, 99, stdin);
+		char *p = strchr(filename, '\n'); // p will point to the newline in filename
+		if(p) *p = 0; // if p is not null, terminate filename at p
+	
+		fp = fopen(filename, "r");
+	
+		if(!fp)
+			perror("File not found");
+		else
+		{
+			size_t len = 0;
+			ssize_t read;
+
+			printf("opening file: %s...\n", filename);
+			int n = 0;
+			 while ((read = getline(&line, &len, fp)) != -1) {
+				printf("Retrieved line of length %zu :\n", read);
+				if (n == 0)
+				{
+					strcpy(numLine,line);
+				}
+				else if (n == 1)
+				{
+					strcpy(valueLine,line);
+				}
+				n++;
+				printf("line=%s\n", line);
+			}
+			
+			//close file
+			fclose(fp);
+			a = atoi(valueLine);
+			parseNumLine(numLine, &v, &maxNumOfCoins);
+		}
+	
 	}
 	else if (strcmp(userInput,"2") == 0)
 	{
 		//Run Random Generator
 		randomNum(&v, &a, maxNumOfCoins, maxCoinValue, maxValue);
+		strcpy(filename,"random.txt");
 	}
 	
 	//start = clock();
 	runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
 	//end = clock();
 	//elapsed_time = (float)(end - start) / (1.0*CLOCKS_PER_SEC);
-	printf("%d\n", a);
+	//printf("%d\n", a);
 	//fprintf(fp,"%d %s %f %s",a, "\t", elapsed_time ,"\n");
-	printf("\nmaxNumOfCoins=%d\n", maxNumOfCoins);
-	printf("maxCoinValue=%d\n", maxCoinValue);
-	printf("maxValue=%d\n", maxValue);
+	printf("\nStarting array / value:\n");
 	outputResults(v, maxNumOfCoins, a, 'V');
 	//printf("Elapsed time: %f seconds\n", elapsed_time);
-	printf("\nResults:\n");
+	printf("\nResult array count / number of coins used:\n");
 	outputResults(c, maxNumOfCoins, m, 'C');
-	
-	// printf("Enter filename: ");
-	// fgets(filename, 99, stdin);
-	// char *p = strchr(filename, '\n'); // p will point to the newline in filename
-	// if(p) *p = 0; // if p is not null, terminate filename at p
-	
-	// fp = fopen(filename, "r");
-	
-	// if(!fp)
-		// perror("File not found");
-	// else
-	// {
-		// printf("opening file: %s...\n", filename);
-		// while ((read = getline(&line, &len, fp)) != -1) {
-			// if (n == 1)
-			// {
-				// numLine = (char *) realloc (numLine, strlen(line)+1);
-				// strncpy(numLine, line, strlen(line));
-				// *p = strchr(numLine, '\n'); // p will point to the newline in filename
-				// if(p) *p = 0; // if p is not null, terminate filename at p
-				
-			// }
-			// if (n == 2)
-			// {
-				// printf("n=2\n");
-				// printf("strlen=%d\n",strlen(line));
-				// valueLine = (char *) realloc (valueLine, strlen(line)+1);
-				//strncpy(valueLine, line, strlen(line));
-			// }
-			// n++;
-		// }
-    // }
- 
-	// printf("numLine=%s\n", numLine);
-	// printf("valueLine=%s\n", valueLine);
+	printResults(c,maxNumOfCoins, m, 'C', filename);
 
- 
-	/*
-    //parse numbers from lines into array
-	for (int i = 0; i < line[0].noOfLines; i++)
-	{
-		line[i].noOfnums = 0;
-		//printf("Words[%d]=%s\n", i, line[i].words); //Test Only
-		char *pt;
-		pt = strtok(line[i].words,",");
-		while (pt != NULL) {
-			if (pt[0] == '[')
-				pt[0] = ' ';
-			line[i].num[line[i].noOfnums] = atoi(pt);
-			pt = strtok (NULL, ",");
-			line[i].noOfnums++;
-		}
-	}
-	*/
-	//close file
-	//fclose(fp);
+	
+	
 	
 	//Exit
 	printf("\nHave a nice day.\n");
