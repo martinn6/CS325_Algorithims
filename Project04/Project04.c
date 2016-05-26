@@ -250,29 +250,29 @@ int main()
 	char *p = strchr(filename, '\n'); // p will point to the newline in filename
 	if(p) *p = 0; // if p is not null, terminate filename at p
 	
-		fp = fopen(filename, "r");
+	fp = fopen(filename, "r");
 	
-		if(!fp)
-			perror("File not found");
-		else
-		{
-			size_t len = 0;
-			ssize_t read;
+	if(!fp)
+		perror("File not found");
+	else
+	{
+		size_t len = 0;
+		ssize_t read;
 
-			printf("opening file: %s...\n", filename);
-			int n = 0;
-			 while ((read = getline(&line, &len, fp)) != -1) {
-					printf("numline=%s", line);
-				n++;
-			}
-			
-			//close file
-			fclose(fp);
-			//a = atoi(valueLine);
-			//parseNumLine(numLine, &v, &maxNumOfCoins);
+		printf("opening file: %s...\n", filename);
+		int n = 0;
+		 while ((read = getline(&line, &len, fp)) != -1) {
+				printf("numline=%s", line);
+			n++;
 		}
-	
+			
+		//close file
+		fclose(fp);
+		//a = atoi(valueLine);
+		//parseNumLine(numLine, &v, &maxNumOfCoins);
 	}
+	
+
 	
 	
 	//start = clock();
