@@ -219,7 +219,7 @@ int parseLine(struct cities *city, char line[1024])
 	
 	//parse numbers from lines into array
 	char *pt;
-	pt = strtok(line,",");
+	pt = strtok(line," ");
 	while (pt != NULL) {
 		if (pt[0] == '[')
 			pt[0] = ' ';
