@@ -221,8 +221,9 @@ int parseLine(struct cities *city, char line[1024])
 	char *pt;
 	pt = strtok(line," ");
 	while (pt != NULL) {
+		printf("pt=%s; ", pt);
 		v[x] = atoi(pt);
-		printf("v[x]=%d",v[x]);
+		printf("v[x]=%d; ",v[x]);
 		pt = strtok (NULL, ",");
 		x++;
 	}
