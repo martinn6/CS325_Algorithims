@@ -1,7 +1,9 @@
 /*********************************************************************************************
  * Developers: Nick Martin (martinn6)
+ *             Xisheng
+ * 			   
  * Date: 20160422
- * Project: Project 02
+ * Project: Project 04
  * Description: Implement a greedy algorithm.
  * *******************************************************************************************/
 
@@ -11,6 +13,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+
+struct city {
+	int id;
+	int x;
+	int y;
+};
+
 
 /**********************************************************
 Name: randomNum()
@@ -224,7 +233,6 @@ int parseNumLine(char numLine[1024], int *v, int *maxNumOfCoins)
 
 int main()
 {
-	srand(time(NULL));
 	//Declare Variables
 	FILE *fp;
 	char *line;
@@ -232,45 +240,15 @@ int main()
     ssize_t read;
 	char filename[99];
 	char numLine[1024];
-	char valueLine[1024];
 	char *userInput = (char*) malloc(100);
 	int value;
 	int n = 0;
-	clock_t start, end;
-	float elapsed_time;
-
-	//For random generation
-	int maxValue = 10000;
-	int maxNumOfCoins = 5;
-	int maxCoinValue = 50;
-	
-	//regular variables
-	int v[maxNumOfCoins];
-	int c[maxNumOfCoins];
-	int a, m;	//start value
-	
-	//prep arrays
-	for(int x = 0; x < maxNumOfCoins; x++)
-	{
-		c[x] = 0;
-		v[x] = 0;
-	}
 
 	//ask user for file or random generator
-	printf("What do you want to run:\n");
-	printf("1) Load from File\n");
-	printf("2) Random Generator\n");
-	
-	//Get user input
-	scanf ("%[^\n]%*c", userInput);
-	
-	if (strcmp(userInput,"1") == 0)
-	{
-		//Run LoadFile
-		printf("Enter filename: ");
-		fgets(filename, 99, stdin);
-		char *p = strchr(filename, '\n'); // p will point to the newline in filename
-		if(p) *p = 0; // if p is not null, terminate filename at p
+	printf("Enter filename: ");
+	fgets(filename, 99, stdin);
+	char *p = strchr(filename, '\n'); // p will point to the newline in filename
+	if(p) *p = 0; // if p is not null, terminate filename at p
 	
 		fp = fopen(filename, "r");
 	
@@ -284,45 +262,31 @@ int main()
 			printf("opening file: %s...\n", filename);
 			int n = 0;
 			 while ((read = getline(&line, &len, fp)) != -1) {
-				printf("Retrieved line of length %zu :\n", read);
-				if (n == 0)
-				{
-					strcpy(numLine,line);
-				}
-				else if (n == 1)
-				{
-					strcpy(valueLine,line);
-				}
+					printf("numline=%s", line);
 				n++;
-				printf("line=%s\n", line);
 			}
 			
 			//close file
 			fclose(fp);
-			a = atoi(valueLine);
-			parseNumLine(numLine, &v, &maxNumOfCoins);
+			//a = atoi(valueLine);
+			//parseNumLine(numLine, &v, &maxNumOfCoins);
 		}
 	
 	}
-	else if (strcmp(userInput,"2") == 0)
-	{
-		//Run Random Generator
-		randomNum(&v, &a, maxNumOfCoins, maxCoinValue, maxValue);
-		strcpy(filename,"random.txt");
-	}
+	
 	
 	//start = clock();
-	runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
+	// runGreedyAlgorithm(v, a, &c, &m, maxNumOfCoins);
 	//end = clock();
 	//elapsed_time = (float)(end - start) / (1.0*CLOCKS_PER_SEC);
 	//printf("%d\n", a);
 	//fprintf(fp,"%d %s %f %s",a, "\t", elapsed_time ,"\n");
-	printf("\nStarting array / value:\n");
-	outputResults(v, maxNumOfCoins, a, 'V');
+	// printf("\nStarting array / value:\n");
+	// outputResults(v, maxNumOfCoins, a, 'V');
 	//printf("Elapsed time: %f seconds\n", elapsed_time);
-	printf("\nResult array count / number of coins used:\n");
-	outputResults(c, maxNumOfCoins, m, 'C');
-	printResults(c,maxNumOfCoins, m, 'C', filename);
+	// printf("\nResult array count / number of coins used:\n");
+	// outputResults(c, maxNumOfCoins, m, 'C');
+	// printResults(c,maxNumOfCoins, m, 'C', filename);
 
 	
 	
