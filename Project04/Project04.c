@@ -212,7 +212,7 @@ Name: parseNumLine()
 Description: outputs the results to a file in the format:
 	[ArrayName] = [n0, n1, ... n[Array.Length]]
 **********************************************************/
-int parseLine(struct cities *city, char line[1024])
+int parseLine(struct cities *city, int n, char line[1024])
 {
 	int x = 0;
 	int v[1000];
@@ -221,9 +221,13 @@ int parseLine(struct cities *city, char line[1024])
 	char *pt;
 	pt = strtok(line," ");
 	while (pt != NULL) {
-		printf("pt=%s; ", pt);
-		v[x] = atoi(pt);
-		printf("v[x]=%d; ",v[x]);
+		if(x==0)
+			city[n].id = atoi(pt);
+		else if(x==1)
+			city[n].x = atoi(pt);
+		else if(x==2)
+			city[n].y = atoi(pt);
+		
 		pt = strtok (NULL, " ");
 		x++;
 	}
@@ -264,7 +268,7 @@ int main()
 		printf("opening file: %s...\n", filename);
 		int n = 0;
 		while ((read = getline(&line, &len, fp)) != -1) {
-			parseLine(&city, line);
+			parseLine(&city, n, line);
 			printf("\nline=%s", line);
 			n++;
 		}
