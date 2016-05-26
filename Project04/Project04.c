@@ -14,7 +14,7 @@
 #include <time.h>
 #include <unistd.h>
 
-struct city {
+struct cities {
 	int id;
 	int x;
 	int y;
@@ -212,21 +212,22 @@ Name: parseNumLine()
 Description: outputs the results to a file in the format:
 	[ArrayName] = [n0, n1, ... n[Array.Length]]
 **********************************************************/
-int parseNumLine(char numLine[1024], int *v, int *maxNumOfCoins)
+int parseLine(struct cities *city, char line[1024])
 {
 	int x = 0;
 	
 	//parse numbers from lines into array
 	char *pt;
-	pt = strtok(numLine,",");
+	pt = strtok(line,",");
 	while (pt != NULL) {
 		if (pt[0] == '[')
 			pt[0] = ' ';
 		v[x] = atoi(pt);
+		printf("v[x]=%d",v[x]);
 		pt = strtok (NULL, ",");
 		x++;
 	}
-	*maxNumOfCoins = x;
+
 	return(0);
 }
 
@@ -234,6 +235,7 @@ int parseNumLine(char numLine[1024], int *v, int *maxNumOfCoins)
 int main()
 {
 	//Declare Variables
+	cities city[1000];
 	FILE *fp;
 	char *line;
     size_t len = 0;
@@ -261,8 +263,9 @@ int main()
 
 		printf("opening file: %s...\n", filename);
 		int n = 0;
-		 while ((read = getline(&line, &len, fp)) != -1) {
-				printf("numline=%s", line);
+		while ((read = getline(&line, &len, fp)) != -1) {
+			parseLine(&city, line);
+			printf("line=%s", line);
 			n++;
 		}
 			
