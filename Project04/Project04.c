@@ -215,6 +215,7 @@ Description: outputs the results to a file in the format:
 int parseLine(struct cities *city, char line[1024])
 {
 	int x = 0;
+	int v[1000];
 	
 	//parse numbers from lines into array
 	char *pt;
