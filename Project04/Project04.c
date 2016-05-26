@@ -236,7 +236,7 @@ int parseLine(struct cities *city, char line[1024])
 int main()
 {
 	//Declare Variables
-	cities city[1000];
+	struct cities city[1000];
 	FILE *fp;
 	char *line;
     size_t len = 0;
