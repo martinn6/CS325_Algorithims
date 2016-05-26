@@ -151,59 +151,15 @@ Name: printResults()
 Description: outputs the results to screen in the format:
 	[ArrayName] = [n0, n1, ... n[Array.Length]]
 **********************************************************/
-int printResults(int c[], int length, int m, char arrayName, char filename[])
+int printResults(struct cities *city, int length)
 {
-	int p;
-	FILE *fp;
-	char outfilename[99];
-	char *pch;
-		
-	strcpy(outfilename, filename);
-	pch=strchr(outfilename,'.');
-	p = pch-outfilename;
-	if(p)
+	for (int n = 0; n < length; n++)
 	{
-		outfilename[p]='c';
-		outfilename[p+1]='h';
-		outfilename[p+2]='a';
-		outfilename[p+3]='n';
-		outfilename[p+4]='g';
-		outfilename[p+5]='e';
-		outfilename[p+6]='.';
-		outfilename[p+7]='t';
-		outfilename[p+8]='x';
-		outfilename[p+9]='t';
-		outfilename[p+10]='\0';
-	}
-	else
-	{
-		p = 0;
-		outfilename[p]='c';
-		outfilename[p+1]='h';
-		outfilename[p+2]='a';
-		outfilename[p+3]='n';
-		outfilename[p+4]='g';
-		outfilename[p+5]='e';
-		outfilename[p+6]='.';
-		outfilename[p+7]='t';
-		outfilename[p+8]='x';
-		outfilename[p+9]='t';
-		outfilename[p+10]='\0';
+		printf("city[%d].id=%d; ", n, city[n].id);
+		printf("city[%d].x=%d; ", n, city[n].x);
+		printf("city[%d].y=%d\n", n, city[n].y);
 	}
 
-	printf("outfilename=%s\n", outfilename);
-	fp = fopen(outfilename, "w");
-	fprintf(fp, "%c", arrayName);
-	fprintf(fp, "%s","=[");
-	for (int x = 0; x < length; x++)
-	{
-		fprintf(fp, "%d", c[x]);
-		if(x != length-1)
-			fprintf(fp, "%s", ", ");
-	}
-	fprintf(fp, "%s", "]\n");
-	fprintf(fp, "%d %s",m, "\n");
-	fclose(fp);
 	return 0;
 }
 
@@ -272,6 +228,7 @@ int main()
 			printf("\nline=%s", line);
 			n++;
 		}
+		printResults(&city, n);
 			
 		//close file
 		fclose(fp);
